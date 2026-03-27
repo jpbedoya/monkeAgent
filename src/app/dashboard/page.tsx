@@ -10,7 +10,7 @@ function DashboardNav() {
         <Link href="/" className="flex items-center gap-2 text-lg font-bold">
           <span className="text-xl">🐵</span>
           <span className="text-mk-ivory">
-            Open<span className="text-mk-yellow">Claw</span> Cloud
+            monke<span className="text-mk-yellow">Agent</span>
           </span>
         </Link>
         <div className="flex items-center gap-4">
@@ -54,7 +54,7 @@ function ServerStatusCard() {
       </div>
 
       <div className="flex items-center gap-2 text-sm">
-        <span className="font-mono text-mk-ivory/50">alex.openclaw.ai</span>
+        <span className="font-mono text-mk-ivory/50">alex.monkeagent.ai</span>
         <span className="text-mk-ivory/20">|</span>
         <span className="text-mk-ivory/40">Hetzner CX21 &bull; 2 vCPU &bull; 4GB RAM</span>
       </div>
@@ -294,7 +294,7 @@ export default function DashboardPage() {
             Welcome back, Alex 🐵
           </h1>
           <p className="text-sm text-mk-ivory/50">
-            Your OpenClaw instance is running smoothly
+            Your monkeAgent is running smoothly · Powered by OpenClaw
           </p>
         </div>
 

@@ -7,7 +7,7 @@ function Navbar() {
         <Link href="/" className="flex items-center gap-2 text-xl font-bold">
           <span className="text-2xl">🐵</span>
           <span className="text-mk-ivory">
-            Open<span className="text-mk-yellow">Claw</span> Cloud
+            monke<span className="text-mk-yellow">Agent</span>
           </span>
         </Link>
         <div className="flex items-center gap-6">
@@ -37,14 +37,14 @@ function Hero() {
 
       <div className="relative z-10 mx-auto max-w-3xl text-center">
         <div className="mb-6 inline-block rounded-full border border-mk-green/30 bg-mk-green/10 px-4 py-1.5 text-sm text-mk-light-green">
-          🐵 Powered by MonkeDAO
+          🐵 Powered by MonkeDAO · Built on OpenClaw
         </div>
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-mk-ivory sm:text-6xl">
           Your personal AI assistant,{" "}
           <span className="text-mk-yellow">ready in minutes</span>
         </h1>
         <p className="mb-10 text-lg text-mk-ivory/60 sm:text-xl">
-          Deploy your own OpenClaw instance on managed infrastructure. No
+          Your own AI agent, deployed in minutes. Powered by OpenClaw.. No
           terminal needed, full control, your own server.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -101,7 +101,7 @@ const features = [
     icon: "🐵",
     title: "Community Driven",
     description:
-      "Built by MonkeDAO. Join a growing community of builders and contributors shaping the future of personal AI.",
+      "Built by MonkeDAO on OpenClaw. Join a growing community of builders and contributors shaping the future of personal AI.",
   },
 ];
 
@@ -249,7 +249,7 @@ function Footer() {
         <div className="flex items-center gap-2 text-sm text-mk-ivory/50">
           <span className="text-lg">🐵</span>
           <span>
-            Open<span className="text-mk-yellow">Claw</span> Cloud &copy; 2026
+            monke<span className="text-mk-yellow">Agent</span> &copy; 2026
             MonkeDAO
           </span>
         </div>

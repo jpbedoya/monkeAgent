@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/openclaw-cloud',
-  assetPrefix: '/openclaw-cloud/',
+  basePath: '/monkeAgent',
+  assetPrefix: '/monkeAgent/',
   images: {
     unoptimized: true,
   },

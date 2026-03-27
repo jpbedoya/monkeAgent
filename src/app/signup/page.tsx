@@ -50,7 +50,7 @@ function StepCreateAccount({ onNext }: { onNext: () => void }) {
           Create your account
         </h2>
         <p className="text-sm text-mk-ivory/50">
-          Get started with OpenClaw Cloud in minutes
+          Get your monkeAgent up and running in minutes
         </p>
       </div>
 
@@ -138,7 +138,7 @@ function StepTelegram({ onNext }: { onNext: () => void }) {
           Connect your Telegram Bot
         </h2>
         <p className="text-sm text-mk-ivory/50">
-          Your OpenClaw will communicate through this bot
+          Your monkeAgent will communicate through this bot
         </p>
       </div>
 
@@ -360,15 +360,15 @@ function StepLaunch() {
       >
         <div className="mb-6 text-6xl">🐵</div>
         <h2 className="mb-3 text-3xl font-bold text-mk-ivory">
-          Your OpenClaw is ready!
+          Your monkeAgent is live! 🎉
         </h2>
         <p className="mb-2 text-mk-ivory/50">
-          Your instance has been deployed and is running.
+          Your AI agent is deployed and running. Powered by OpenClaw..
         </p>
         <div className="my-6 rounded-xl border border-mk-light-green/30 bg-mk-light-green/10 p-4">
           <p className="text-sm text-mk-ivory/50">Your server URL</p>
           <p className="mt-1 font-mono text-lg font-bold text-mk-light-green">
-            alex.openclaw.ai
+            alex.monkeagent.ai
           </p>
         </div>
         <Link
@@ -395,7 +395,7 @@ function StepLaunch() {
           Provisioning your server...
         </h2>
         <p className="mb-6 text-sm text-mk-ivory/50">
-          Setting up your OpenClaw instance on Hetzner Ashburn
+          Spinning up your monkeAgent on Hetzner Ashburn...
         </p>
         <div className="overflow-hidden rounded-full bg-mk-green/20">
           <motion.div
@@ -453,7 +453,7 @@ function StepLaunch() {
         onClick={handleLaunch}
         className="w-full rounded-xl bg-mk-yellow py-3 text-lg font-semibold text-mk-dark-green transition hover:bg-mk-yellow/90"
       >
-        🚀 Launch My OpenClaw
+        🚀 Launch My monkeAgent
       </button>
     </div>
   );
@@ -469,7 +469,7 @@ export default function SignupPage() {
         <Link href="/" className="flex items-center gap-2 text-xl font-bold">
           <span className="text-2xl">🐵</span>
           <span className="text-mk-ivory">
-            Open<span className="text-mk-yellow">Claw</span> Cloud
+            monke<span className="text-mk-yellow">Agent</span>
           </span>
         </Link>
       </div>
