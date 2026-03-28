@@ -33,16 +33,15 @@ function ServerStatusCard() {
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-lg font-bold text-mk-ivory">Server Status</h2>
         <span className="rounded-full bg-mk-light-green/10 px-3 py-1 text-xs font-semibold text-mk-light-green">
-          Healthy
+          Running
         </span>
       </div>
 
-      <div className="mb-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <div className="mb-6 grid grid-cols-3 gap-4">
         {[
           { label: "Uptime", value: "99.9%" },
-          { label: "Region", value: "Ashburn" },
+          { label: "Region", value: "Hetzner Ashburn" },
           { label: "Last Restart", value: "3 days ago" },
-          { label: "CPU Usage", value: "12%" },
         ].map((stat) => (
           <div key={stat.label}>
             <div className="text-xs text-mk-ivory/40">{stat.label}</div>
@@ -53,76 +52,93 @@ function ServerStatusCard() {
         ))}
       </div>
 
-      <div className="flex items-center gap-2 text-sm">
+      <div className="mb-4 flex items-center gap-2 text-sm">
         <span className="font-mono text-mk-ivory/50">alex.monkeagent.ai</span>
         <span className="text-mk-ivory/20">|</span>
-        <span className="text-mk-ivory/40">Hetzner CX21 &bull; 2 vCPU &bull; 4GB RAM</span>
+        <span className="text-mk-ivory/40">CX22 &bull; 2 vCPU &bull; 4GB RAM</span>
       </div>
 
-      <div className="mt-4 flex gap-3">
+      <div className="flex flex-wrap gap-3">
         <button className="rounded-lg border border-mk-green/30 px-4 py-2 text-sm font-medium text-mk-ivory transition hover:bg-mk-green/10">
           Restart
         </button>
         <button className="rounded-lg border border-mk-green/30 px-4 py-2 text-sm font-medium text-mk-ivory transition hover:bg-mk-green/10">
           Stop
         </button>
-        <button className="rounded-lg border border-mk-green/30 px-4 py-2 text-sm font-medium text-mk-ivory transition hover:bg-mk-green/10">
-          View Logs
-        </button>
+        <a
+          href="http://alex.monkeagent.ai:18789"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-lg border border-mk-green/30 px-4 py-2 text-sm font-medium text-mk-ivory/60 transition hover:bg-mk-green/10 hover:text-mk-ivory"
+        >
+          Open Control UI &rarr;
+        </a>
       </div>
     </div>
   );
 }
 
-const integrations = [
+const channels = [
   {
     name: "Telegram",
-    status: "connected",
-    detail: "@alex_openclaw_bot",
     icon: "💬",
+    connected: true,
+    detail: "@alex_monkeagent_bot",
   },
   {
-    name: "AI Provider",
-    status: "connected",
-    detail: "Claude (Anthropic)",
-    icon: "🤖",
-  },
-  {
-    name: "Google",
-    status: "not_connected",
-    detail: "Calendar, Gmail, Drive",
-    icon: "📧",
+    name: "WhatsApp",
+    icon: "📱",
+    connected: true,
+    detail: "+1 (415) 555-0142",
   },
   {
     name: "Discord",
-    status: "not_connected",
-    detail: "Server bot integration",
     icon: "🎮",
+    connected: false,
+  },
+  {
+    name: "iMessage",
+    icon: "💭",
+    connected: false,
+  },
+  {
+    name: "Slack",
+    icon: "🔗",
+    connected: false,
+    label: "(Plugin)",
   },
 ];
 
-function IntegrationsSection() {
+function ChannelsSection() {
   return (
     <div className="rounded-2xl border border-mk-green/20 bg-mk-dark-green/30 p-6">
-      <h2 className="mb-4 text-lg font-bold text-mk-ivory">
-        Connected Integrations
-      </h2>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {integrations.map((int) => (
+      <h2 className="text-lg font-bold text-mk-ivory">Messaging Channels</h2>
+      <p className="mb-4 mt-1 text-xs text-mk-ivory/40">
+        Connect the apps you want your agent to respond in
+      </p>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {channels.map((ch) => (
           <div
-            key={int.name}
+            key={ch.name}
             className="flex items-center justify-between rounded-xl border border-mk-green/15 bg-[#0d1a10]/50 p-4"
           >
             <div className="flex items-center gap-3">
-              <span className="text-2xl">{int.icon}</span>
+              <span className="text-2xl">{ch.icon}</span>
               <div>
                 <div className="text-sm font-semibold text-mk-ivory">
-                  {int.name}
+                  {ch.name}
+                  {ch.label && (
+                    <span className="ml-1 text-xs font-normal text-mk-ivory/30">
+                      {ch.label}
+                    </span>
+                  )}
                 </div>
-                <div className="text-xs text-mk-ivory/40">{int.detail}</div>
+                {ch.connected && ch.detail && (
+                  <div className="text-xs text-mk-ivory/40">{ch.detail}</div>
+                )}
               </div>
             </div>
-            {int.status === "connected" ? (
+            {ch.connected ? (
               <span className="rounded-full bg-mk-light-green/10 px-2.5 py-1 text-xs font-medium text-mk-light-green">
                 Connected
               </span>
@@ -138,146 +154,189 @@ function IntegrationsSection() {
   );
 }
 
-const activities = [
-  {
-    text: 'Responded to message from @jpbedoya',
-    time: "2 min ago",
-    icon: "💬",
-  },
-  {
-    text: "Summarized 3 unread emails",
-    time: "15 min ago",
-    icon: "📧",
-  },
-  {
-    text: "Created calendar event: Team standup",
-    time: "1 hour ago",
-    icon: "📅",
-  },
-  {
-    text: "Answered question from @monke_dev",
-    time: "3 hours ago",
-    icon: "🐵",
-  },
-  {
-    text: "Server health check passed",
-    time: "6 hours ago",
-    icon: "✅",
-  },
+function AIProviderCard() {
+  return (
+    <div className="rounded-2xl border border-mk-green/20 bg-mk-dark-green/30 p-6">
+      <h2 className="mb-4 text-lg font-bold text-mk-ivory">AI Provider</h2>
+      <div className="space-y-3">
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-mk-ivory/40">Provider</span>
+          <span className="text-sm font-medium text-mk-ivory">
+            Claude &middot; Anthropic
+          </span>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-mk-ivory/40">Model</span>
+          <span className="font-mono text-sm text-mk-ivory/70">
+            claude-sonnet-4-5
+          </span>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-mk-ivory/40">API Key</span>
+          <span className="flex items-center gap-2 text-sm text-mk-ivory/70">
+            <span className="font-mono">••••••••sk-ant</span>
+            <span className="rounded-full bg-mk-light-green/10 px-2 py-0.5 text-xs font-medium text-mk-light-green">
+              Configured
+            </span>
+          </span>
+        </div>
+      </div>
+      <div className="mt-4">
+        <button className="rounded-lg border border-mk-green/30 px-4 py-2 text-sm font-medium text-mk-ivory transition hover:bg-mk-green/10">
+          Change Provider
+        </button>
+      </div>
+    </div>
+  );
+}
+
+const civicIntegrations = [
+  { name: "Gmail", icon: "📧", authorized: true },
+  { name: "Google Calendar", icon: "📅", authorized: true },
+  { name: "GitHub", icon: "🐙", authorized: false },
+  { name: "Slack", icon: "💼", authorized: false },
 ];
 
-function RecentActivity() {
+function CivicIntegrationsCard() {
   return (
     <div className="rounded-2xl border border-mk-green/20 bg-mk-dark-green/30 p-6">
-      <h2 className="mb-4 text-lg font-bold text-mk-ivory">Recent Activity</h2>
-      <div className="space-y-3">
-        {activities.map((activity, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-3 rounded-lg border border-mk-green/10 bg-[#0d1a10]/30 px-4 py-3"
-          >
-            <span className="text-lg">{activity.icon}</span>
-            <span className="flex-1 text-sm text-mk-ivory/70">
-              {activity.text}
-            </span>
-            <span className="whitespace-nowrap text-xs text-mk-ivory/30">
-              {activity.time}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function QuickConfig() {
-  const [autoReply, setAutoReply] = useState(true);
-  const [digest, setDigest] = useState(false);
-  const [debug, setDebug] = useState(false);
-
-  const Toggle = ({
-    enabled,
-    onToggle,
-  }: {
-    enabled: boolean;
-    onToggle: () => void;
-  }) => (
-    <button
-      onClick={onToggle}
-      className={`relative h-6 w-11 rounded-full transition-colors ${
-        enabled ? "bg-mk-light-green" : "bg-mk-green/30"
-      }`}
-    >
-      <span
-        className={`absolute top-0.5 h-5 w-5 rounded-full bg-white transition-transform ${
-          enabled ? "left-[22px]" : "left-0.5"
-        }`}
-      />
-    </button>
-  );
-
-  return (
-    <div className="rounded-2xl border border-mk-green/20 bg-mk-dark-green/30 p-6">
-      <h2 className="mb-4 text-lg font-bold text-mk-ivory">Quick Config</h2>
-      <div className="space-y-4">
-        {[
-          {
-            label: "Auto-reply when offline",
-            description: "Respond to messages even when you're away",
-            enabled: autoReply,
-            toggle: () => setAutoReply(!autoReply),
-          },
-          {
-            label: "Daily email digest",
-            description: "Get a summary of all interactions each morning",
-            enabled: digest,
-            toggle: () => setDigest(!digest),
-          },
-          {
-            label: "Debug mode",
-            description: "Show detailed logs in the activity feed",
-            enabled: debug,
-            toggle: () => setDebug(!debug),
-          },
-        ].map((item) => (
-          <div
-            key={item.label}
-            className="flex items-center justify-between"
-          >
-            <div>
-              <div className="text-sm font-medium text-mk-ivory">
-                {item.label}
-              </div>
-              <div className="text-xs text-mk-ivory/40">
-                {item.description}
-              </div>
-            </div>
-            <Toggle enabled={item.enabled} onToggle={item.toggle} />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function DangerZone() {
-  return (
-    <div className="rounded-2xl border border-red-500/20 bg-red-950/10 p-6">
-      <h2 className="mb-1 text-lg font-bold text-red-400">Danger Zone</h2>
-      <p className="mb-4 text-xs text-red-400/50">
-        These actions can affect your running server
+      <h2 className="text-lg font-bold text-mk-ivory">
+        App Integrations via Civic
+      </h2>
+      <p className="mb-4 mt-1 text-xs text-mk-ivory/40">
+        Your agent accesses these apps securely through Civic — credentials
+        never leave the Civic Hub
       </p>
-      <div className="flex flex-wrap gap-3">
-        <button className="rounded-lg border border-red-500/30 px-4 py-2 text-sm font-medium text-red-400 transition hover:bg-red-500/10">
-          Restart Server
-        </button>
-        <button className="rounded-lg border border-red-500/30 px-4 py-2 text-sm font-medium text-red-400 transition hover:bg-red-500/10">
-          Reset Config
-        </button>
-        <button className="rounded-lg border border-red-500/50 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-400 transition hover:bg-red-500/20">
-          Delete Server
-        </button>
+      <div className="grid grid-cols-2 gap-3">
+        {civicIntegrations.map((int) => (
+          <div
+            key={int.name}
+            className="flex items-center gap-3 rounded-xl border border-mk-green/15 bg-[#0d1a10]/50 p-4"
+          >
+            <span className="text-xl">{int.icon}</span>
+            <div>
+              <div className="text-sm font-semibold text-mk-ivory">
+                {int.name}
+              </div>
+              {int.authorized ? (
+                <div className="text-xs text-mk-light-green">authorized ✓</div>
+              ) : (
+                <div className="text-xs text-mk-ivory/30">not connected</div>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
+      <div className="mt-4 flex items-center justify-between">
+        <a
+          href="https://app.civic.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-lg border border-mk-green/20 px-4 py-2 text-sm font-medium text-mk-ivory/60 transition hover:bg-mk-green/10 hover:text-mk-ivory"
+        >
+          Manage in Civic &rarr;
+        </a>
+        <span className="text-xs text-mk-ivory/20">
+          Powered by Civic &middot; app.civic.com
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function AdvancedSection() {
+  const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("ssh monke@alex.monkeagent.ai");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="rounded-2xl border border-mk-green/10 bg-mk-dark-green/15 p-6 opacity-70">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between text-left"
+      >
+        <div className="flex items-center gap-2">
+          <h2 className="text-lg font-bold text-mk-ivory/70">Advanced</h2>
+          <span className="text-xs text-mk-ivory/30">(for power users)</span>
+        </div>
+        <span
+          className={`text-mk-ivory/40 transition-transform ${open ? "rotate-180" : ""}`}
+        >
+          ▾
+        </span>
+      </button>
+
+      {open && (
+        <div className="mt-4 space-y-4">
+          <div className="rounded-xl border border-mk-green/10 bg-[#0d1a10]/30 p-4">
+            <div className="text-sm font-semibold text-mk-ivory/60">
+              OpenClaw Control UI
+            </div>
+            <div className="mt-1 text-xs text-mk-ivory/30">
+              Full dashboard with chat, sessions, and config
+            </div>
+            <a
+              href="http://alex.monkeagent.ai:18789"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block text-xs font-medium text-mk-ivory/40 underline transition hover:text-mk-ivory/60"
+            >
+              alex.monkeagent.ai:18789
+            </a>
+          </div>
+
+          <div className="rounded-xl border border-mk-green/10 bg-[#0d1a10]/30 p-4">
+            <div className="text-sm font-semibold text-mk-ivory/60">
+              SSH Access
+            </div>
+            <div className="mt-1 flex items-center gap-2">
+              <code className="rounded bg-[#0d1a10]/60 px-2 py-1 font-mono text-xs text-mk-ivory/50">
+                ssh monke@alex.monkeagent.ai
+              </code>
+              <button
+                onClick={handleCopy}
+                className="rounded border border-mk-green/20 px-2 py-1 text-xs text-mk-ivory/40 transition hover:bg-mk-green/10 hover:text-mk-ivory/60"
+              >
+                {copied ? "Copied!" : "Copy"}
+              </button>
+            </div>
+            <div className="mt-1 text-xs text-mk-ivory/25">
+              Port 22 &middot; key-based auth only
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-mk-green/10 bg-[#0d1a10]/30 p-4">
+            <div className="text-sm font-semibold text-mk-ivory/60">
+              Config file
+            </div>
+            <code className="mt-1 block font-mono text-xs text-mk-ivory/40">
+              ~/.openclaw/openclaw.json
+            </code>
+            <div className="mt-1 flex items-center gap-2 text-xs text-mk-ivory/30">
+              Edit directly for advanced settings &middot;{" "}
+              <a
+                href="https://docs.openclaw.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline transition hover:text-mk-ivory/50"
+              >
+                docs.openclaw.ai
+              </a>
+            </div>
+          </div>
+
+          <div className="border-t border-mk-green/10 pt-3">
+            <button className="text-xs text-red-400/50 transition hover:text-red-400/80">
+              Delete Server
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -287,28 +346,24 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-[#0d1a10]">
       <DashboardNav />
 
-      <div className="mx-auto max-w-6xl px-6 py-8">
+      <div className="mx-auto max-w-4xl px-6 py-8">
         {/* Welcome */}
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-mk-ivory">
             Welcome back, Alex 🐵
           </h1>
           <p className="text-sm text-mk-ivory/50">
-            Your monkeAgent is running smoothly · Powered by OpenClaw
+            Your monkeAgent is running smoothly &middot; Powered by OpenClaw
           </p>
         </div>
 
-        {/* Layout */}
-        <div className="grid gap-6 lg:grid-cols-3">
-          <div className="space-y-6 lg:col-span-2">
-            <ServerStatusCard />
-            <IntegrationsSection />
-            <RecentActivity />
-          </div>
-          <div className="space-y-6">
-            <QuickConfig />
-            <DangerZone />
-          </div>
+        {/* Full-width stacked layout */}
+        <div className="space-y-6">
+          <ServerStatusCard />
+          <ChannelsSection />
+          <AIProviderCard />
+          <CivicIntegrationsCard />
+          <AdvancedSection />
         </div>
       </div>
     </div>
