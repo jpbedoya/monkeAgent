@@ -258,68 +258,191 @@ function ChannelsPanel() {
 
 /* ── AI Provider Panel ── */
 
-const providers = [
-  { name: "Claude Sonnet", company: "Anthropic", letter: "C", color: "bg-orange-500", active: true },
-  { name: "GPT-4", company: "OpenAI", letter: "G", color: "bg-emerald-600", active: false },
-  { name: "Gemini", company: "Google", letter: "G", color: "bg-blue-500", active: false },
-];
+interface ProviderConfig {
+  id: string;
+  company: string;
+  letter: string;
+  color: string;
+  model: string;
+  keyMask: string;
+  active: boolean;
+}
+
+const providerModelOptions: Record<string, string[]> = {
+  anthropic: ["claude-sonnet-4-6", "claude-opus-4-5", "claude-haiku-3-5"],
+  openai: ["gpt-4o", "gpt-4o-mini", "o3", "o4-mini"],
+  google: ["gemini-2.5-pro", "gemini-2.0-flash"],
+  openrouter: ["any model via openrouter"],
+  xai: ["grok-3", "grok-3-mini"],
+  mistral: ["mistral-large-latest", "mistral-small-latest"],
+};
+
+const providerMeta: Record<string, { company: string; letter: string; color: string }> = {
+  anthropic: { company: "Anthropic", letter: "A", color: "bg-orange-500" },
+  openai: { company: "OpenAI", letter: "O", color: "bg-emerald-600" },
+  google: { company: "Google", letter: "G", color: "bg-blue-500" },
+  openrouter: { company: "OpenRouter", letter: "R", color: "bg-purple-500" },
+  xai: { company: "xAI", letter: "X", color: "bg-slate-500" },
+  mistral: { company: "Mistral", letter: "M", color: "bg-pink-500" },
+};
 
 function AIProviderPanel() {
-  const [selected, setSelected] = useState("Claude Sonnet");
+  const [providers, setProviders] = useState<ProviderConfig[]>([
+    { id: "anthropic", company: "Anthropic", letter: "A", color: "bg-orange-500", model: "claude-sonnet-4-6", keyMask: "••••••••sk-ant", active: true },
+  ]);
+  const [adding, setAdding] = useState(false);
+  const [newProviderId, setNewProviderId] = useState("openai");
+  const [newModel, setNewModel] = useState("gpt-4o");
+  const [newKey, setNewKey] = useState("");
+
+  const handleAddProvider = () => {
+    const meta = providerMeta[newProviderId];
+    if (!meta || !newKey.trim()) return;
+    setProviders((prev) => [
+      ...prev,
+      {
+        id: newProviderId,
+        company: meta.company,
+        letter: meta.letter,
+        color: meta.color,
+        model: newModel,
+        keyMask: "••••••••" + newKey.slice(-6),
+        active: false,
+      },
+    ]);
+    setAdding(false);
+    setNewKey("");
+    setNewModel(providerModelOptions[newProviderId]?.[0] ?? "");
+  };
+
+  const handleSetActive = (id: string) => {
+    setProviders((prev) => prev.map((p) => ({ ...p, active: p.id === id })));
+  };
 
   return (
     <div>
-      <h2 className="text-xl font-bold text-mk-ivory">AI Provider</h2>
+      <h2 className="text-xl font-bold text-mk-ivory">AI Providers</h2>
+      <p className="mb-5 mt-1 text-sm text-mk-ivory/40">
+        Add one or more providers — your agent uses the active one by default
+      </p>
 
-      {/* Current provider */}
-      <div className="mt-5 rounded-xl border border-mk-yellow/20 bg-mk-dark-green/40 p-5">
-        <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-500 text-xl font-bold text-white">
-            C
-          </div>
-          <div>
-            <div className="text-lg font-bold text-mk-ivory">Claude Sonnet</div>
-            <div className="text-xs text-mk-ivory/40">Anthropic</div>
-          </div>
-          <span className="ml-auto rounded-full bg-mk-yellow/15 px-3 py-1 text-xs font-semibold text-mk-yellow">
-            Active
-          </span>
-        </div>
-        <div className="mt-4 flex items-center gap-2 text-sm text-mk-ivory/50">
-          <span className="font-mono text-xs">••••••••sk-ant</span>
-          <span className="rounded-full bg-mk-light-green/10 px-2 py-0.5 text-xs font-medium text-mk-light-green">
-            Configured
-          </span>
-        </div>
-      </div>
-
-      {/* Switch provider */}
-      <h3 className="mb-3 mt-6 text-sm font-semibold text-mk-ivory/50">
-        Switch Provider
-      </h3>
-      <div className="grid gap-3 sm:grid-cols-3">
+      {/* Configured providers list */}
+      <div className="space-y-3">
         {providers.map((p) => (
-          <button
-            key={p.name}
-            onClick={() => setSelected(p.name)}
-            className={`flex items-center gap-3 rounded-xl border p-3 text-left transition ${
-              selected === p.name
-                ? "border-mk-yellow/30 bg-mk-dark-green/40"
-                : "border-mk-green/15 bg-mk-dark-green/20 opacity-50 hover:opacity-70"
+          <div
+            key={p.id}
+            className={`flex items-center gap-4 rounded-xl border p-4 transition ${
+              p.active
+                ? "border-mk-yellow/25 bg-mk-dark-green/40"
+                : "border-mk-green/15 bg-mk-dark-green/20 opacity-60"
             }`}
           >
-            <div
-              className={`flex h-8 w-8 items-center justify-center rounded-md ${p.color} text-sm font-bold text-white`}
-            >
+            <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${p.color} text-base font-bold text-white`}>
               {p.letter}
             </div>
-            <div>
-              <div className="text-xs font-semibold text-mk-ivory">{p.name}</div>
-              <div className="text-[10px] text-mk-ivory/30">{p.company}</div>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold text-mk-ivory">{p.company}</span>
+                {p.active && (
+                  <span className="rounded-full bg-mk-yellow/15 px-2 py-0.5 text-[10px] font-semibold text-mk-yellow">
+                    Active
+                  </span>
+                )}
+              </div>
+              <div className="mt-0.5 text-xs text-mk-ivory/40">{p.model}</div>
+              <div className="mt-0.5 font-mono text-[11px] text-mk-ivory/25">{p.keyMask}</div>
             </div>
-          </button>
+            {!p.active && (
+              <button
+                onClick={() => handleSetActive(p.id)}
+                className="shrink-0 rounded-lg border border-mk-green/20 px-3 py-1.5 text-xs font-medium text-mk-ivory/50 transition hover:bg-mk-green/10 hover:text-mk-ivory"
+              >
+                Set active
+              </button>
+            )}
+          </div>
         ))}
       </div>
+
+      {/* Add provider form */}
+      {adding ? (
+        <div className="mt-4 rounded-xl border border-mk-green/20 bg-mk-dark-green/30 p-4 space-y-3">
+          <div className="text-sm font-semibold text-mk-ivory">Add Provider</div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div>
+              <label className="mb-1 block text-xs text-mk-ivory/40">Provider</label>
+              <select
+                value={newProviderId}
+                onChange={(e) => {
+                  setNewProviderId(e.target.value);
+                  setNewModel(providerModelOptions[e.target.value]?.[0] ?? "");
+                }}
+                className="w-full rounded-lg border border-mk-green/20 bg-[#0a1509] px-3 py-2 text-sm text-mk-ivory outline-none focus:border-mk-yellow/40"
+              >
+                {Object.entries(providerMeta).map(([id, m]) => (
+                  <option key={id} value={id}>{m.company}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="mb-1 block text-xs text-mk-ivory/40">Model</label>
+              <select
+                value={newModel}
+                onChange={(e) => setNewModel(e.target.value)}
+                className="w-full rounded-lg border border-mk-green/20 bg-[#0a1509] px-3 py-2 text-sm text-mk-ivory outline-none focus:border-mk-yellow/40"
+              >
+                {(providerModelOptions[newProviderId] ?? []).map((m) => (
+                  <option key={m} value={m}>{m}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div>
+            <label className="mb-1 block text-xs text-mk-ivory/40">API Key</label>
+            <input
+              type="password"
+              value={newKey}
+              onChange={(e) => setNewKey(e.target.value)}
+              placeholder="Paste your API key..."
+              className="w-full rounded-lg border border-mk-green/20 bg-[#0a1509] px-3 py-2 text-sm text-mk-ivory placeholder-mk-ivory/20 outline-none focus:border-mk-yellow/40"
+            />
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={handleAddProvider}
+              className="rounded-lg bg-mk-yellow/90 px-4 py-1.5 text-xs font-semibold text-[#0a1509] transition hover:bg-mk-yellow"
+            >
+              Add
+            </button>
+            <button
+              onClick={() => setAdding(false)}
+              className="rounded-lg border border-mk-green/20 px-4 py-1.5 text-xs font-medium text-mk-ivory/50 transition hover:bg-mk-green/10"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      ) : (
+        <button
+          onClick={() => setAdding(true)}
+          className="mt-4 flex items-center gap-2 rounded-lg border border-mk-yellow/20 bg-mk-yellow/5 px-4 py-2 text-xs font-semibold text-mk-yellow transition hover:bg-mk-yellow/10"
+        >
+          + Add Provider
+        </button>
+      )}
+
+      {/* Docs link */}
+      <p className="mt-5 text-xs text-mk-ivory/30">
+        OpenClaw supports Anthropic, OpenAI, Google, Mistral, xAI, OpenRouter, Bedrock, and more.{" "}
+        <a
+          href="https://docs.openclaw.ai/providers/models"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline transition hover:text-mk-ivory/50"
+        >
+          See all supported providers &rarr;
+        </a>
+      </p>
     </div>
   );
 }
@@ -572,69 +695,56 @@ function AdvancedPanel() {
         For power users who want to go deeper
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2">
         {/* OpenClaw Control UI */}
-        <div className="rounded-xl border border-mk-green/15 bg-mk-dark-green/20 p-4 opacity-80">
-          <div className="text-sm font-semibold text-mk-ivory/70">
-            OpenClaw Control UI
+        <div className="rounded-xl border border-mk-green/30 bg-mk-dark-green/40 p-5">
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🖥️</span>
+            <div className="text-sm font-semibold text-mk-ivory">
+              OpenClaw Control UI
+            </div>
           </div>
-          <div className="mt-1 text-xs text-mk-ivory/35">
-            Full dashboard with chat, sessions, logs, and raw config
+          <div className="mt-2 text-xs text-mk-ivory/60">
+            Full dashboard with chat, sessions, logs, and live config
           </div>
           <a
             href="http://alex.monkeagent.ai:18789"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-block rounded-lg border border-mk-green/20 px-3 py-1.5 text-xs font-medium text-mk-ivory/50 transition hover:bg-mk-green/10 hover:text-mk-ivory/80"
+            className="mt-4 inline-block rounded-lg border border-mk-yellow/30 bg-mk-yellow/10 px-4 py-2 text-xs font-semibold text-mk-yellow transition hover:bg-mk-yellow/20"
           >
             Open Control UI &rarr;
           </a>
         </div>
 
         {/* SSH Access */}
-        <div className="rounded-xl border border-mk-green/15 bg-mk-dark-green/20 p-4 opacity-80">
-          <div className="text-sm font-semibold text-mk-ivory/70">
-            SSH Access
+        <div className="rounded-xl border border-mk-green/30 bg-mk-dark-green/40 p-5">
+          <div className="flex items-center gap-2">
+            <span className="text-lg">💻</span>
+            <div className="text-sm font-semibold text-mk-ivory">
+              SSH Access
+            </div>
           </div>
-          <div className="mt-1 text-xs text-mk-ivory/35">
+          <div className="mt-2 text-xs text-mk-ivory/60">
             Direct terminal access to your server
           </div>
-          <div className="mt-3 flex items-center gap-2">
-            <code className="rounded bg-[#0a1509] px-2 py-1 font-mono text-[11px] text-mk-ivory/45">
+          <div className="mt-4 flex items-center gap-2">
+            <code className="flex-1 rounded-lg bg-[#0a1509] border border-mk-green/20 px-3 py-2 font-mono text-xs text-mk-ivory/80">
               ssh monke@alex.monkeagent.ai
             </code>
             <button
               onClick={handleCopy}
-              className="rounded border border-mk-green/20 px-2 py-1 text-[10px] text-mk-ivory/40 transition hover:bg-mk-green/10 hover:text-mk-ivory/60"
+              className="shrink-0 rounded-lg border border-mk-green/30 px-3 py-2 text-xs font-medium text-mk-ivory/70 transition hover:bg-mk-green/10 hover:text-mk-ivory"
             >
               {copied ? "Copied!" : "Copy"}
             </button>
           </div>
-          <div className="mt-2 text-[10px] text-mk-ivory/25">
-            Port 22 &middot; key-based authentication
+          <div className="mt-2 text-[11px] text-mk-ivory/40">
+            Port 22 &middot; key-based auth
           </div>
         </div>
 
-        {/* Config File */}
-        <div className="rounded-xl border border-mk-green/15 bg-mk-dark-green/20 p-4 opacity-80">
-          <div className="text-sm font-semibold text-mk-ivory/70">
-            Config File
-          </div>
-          <div className="mt-1 text-xs text-mk-ivory/35">
-            Raw OpenClaw config for advanced settings
-          </div>
-          <code className="mt-3 block font-mono text-[11px] text-mk-ivory/40">
-            ~/.openclaw/openclaw.json
-          </code>
-          <a
-            href="https://docs.openclaw.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 inline-block text-xs font-medium text-mk-ivory/40 underline transition hover:text-mk-ivory/60"
-          >
-            View docs &rarr;
-          </a>
-        </div>
+
       </div>
 
       <div className="mt-8">
@@ -669,16 +779,7 @@ export default function DashboardPage() {
 
         <main className="flex-1 overflow-y-auto px-6 py-8 lg:px-10">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-6">
-              <h1 className="text-2xl font-bold text-mk-ivory">
-                Welcome back, Alex 🐵
-              </h1>
-              <p className="text-sm text-mk-ivory/50">
-                Your monkeAgent is running smoothly &middot; Powered by OpenClaw
-              </p>
-            </div>
-
-            {panels[activeView]}
+              {panels[activeView]}
           </div>
         </main>
       </div>
