@@ -64,52 +64,63 @@ function Hero() {
       }}
     >
       {/* Left: copy */}
-      <div>
-        {/* Badge */}
+      <div className="flex flex-col gap-6">
+        {/* Eyebrow badge */}
         <div
-          className="mb-7 inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-medium uppercase"
+          className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-medium uppercase"
           style={{
-            background: "rgba(24,70,35,0.6)",
+            background: "rgba(24,70,35,0.5)",
             border: "0.5px solid var(--g)",
             color: "var(--g-light)",
-            letterSpacing: "0.08em",
+            letterSpacing: "0.1em",
             fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+            alignSelf: "flex-start",
           }}
         >
-          <span
-            className="h-1.5 w-1.5 rounded-full"
-            style={{ background: "var(--g-light)", animation: "pulse 2s infinite" }}
-          />
-          agent.monke.is — Now Live
+          <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--g-light)", animation: "pulse 2s infinite" }} />
+          agent.monke.is
         </div>
 
         {/* Headline */}
         <h1
-          className="mb-6 font-extrabold leading-tight tracking-tight"
-          style={{
-            fontSize: "clamp(2.6rem, 5vw, 4rem)",
-            letterSpacing: "-0.035em",
-            lineHeight: 1.05,
-            color: "#F0F7F1",
-          }}
+          className="font-extrabold leading-tight tracking-tight"
+          style={{ fontSize: "clamp(2.6rem, 5vw, 4rem)", letterSpacing: "-0.035em", lineHeight: 1.05, color: "#F0F7F1" }}
         >
-          Your AI agent,
+          Your agent.
           <br />
-          <em style={{ fontStyle: "normal", color: "var(--g-light)" }}>deployed</em>
-          <br />
-          in minutes.
+          Already{" "}
+          <em style={{ fontStyle: "normal", color: "var(--g-light)" }}>at work.</em>
         </h1>
 
         {/* Sub */}
         <p
-          className="mb-9 text-base leading-relaxed"
-          style={{ color: "rgba(134,201,148,0.65)", maxWidth: 560, lineHeight: 1.75 }}
+          className="text-base leading-relaxed"
+          style={{ color: "rgba(134,201,148,0.65)", maxWidth: 480, lineHeight: 1.75 }}
         >
-          No terminal. No server setup. No DevOps. Your own AI running 24/7 on
-          dedicated infrastructure — built by MonkeDAO on OpenClaw.
+          No dashboard to open. No tab to switch to. Your operator runs 24/7 and
+          shows up where you already are.
         </p>
 
-        {/* Buttons */}
+        {/* Channel badges */}
+        <div className="flex flex-wrap gap-2">
+          {["Telegram", "Discord", "Google", "More"].map((ch) => (
+            <div
+              key={ch}
+              className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs"
+              style={{
+                background: "rgba(24,70,35,0.3)",
+                border: "0.5px solid rgba(74,143,93,0.15)",
+                color: "rgba(134,201,148,0.5)",
+                fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+              }}
+            >
+              <span className="h-1 w-1 rounded-full" style={{ background: "var(--g-light)" }} />
+              {ch}
+            </div>
+          ))}
+        </div>
+
+        {/* CTA buttons */}
         <div className="flex items-center gap-4">
           <Link
             href="/signup"
@@ -126,109 +137,181 @@ function Hero() {
             See how it works
           </a>
         </div>
-      </div>
-
-      {/* Right: terminal */}
-      <div
-        className="overflow-hidden rounded-2xl"
-        style={{ background: "var(--surface2)", border: "0.5px solid rgba(74,143,93,0.18)" }}
-      >
-        {/* Terminal bar */}
-        <div
-          className="flex items-center gap-2 px-4 py-3"
-          style={{ background: "var(--surface3)", borderBottom: "0.5px solid rgba(74,143,93,0.18)" }}
-        >
-          <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#FF5F56" }} />
-          <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#FFBD2E" }} />
-          <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#27C93F" }} />
-          <span
-            className="ml-2 text-xs"
-            style={{
-              color: "rgba(134,201,148,0.4)",
-              letterSpacing: "0.05em",
-              fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
-            }}
-          >
-            agent.monke.is — shell
-          </span>
-        </div>
-
-        {/* Terminal body */}
-        <div
-          className="p-5 font-medium"
-          style={{
-            minHeight: 240,
-            fontSize: 12.5,
-            lineHeight: 2,
-            fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
-          }}
-        >
-          <div className="flex gap-2">
-            <span style={{ color: "var(--g)" }}>$</span>
-            <span style={{ color: "#D4F1DA" }}>monke agent:deploy --name my-agent</span>
-          </div>
-          <div className="flex gap-2" style={{ color: "rgba(134,201,148,0.6)" }}>
-            → Provisioning dedicated server...
-          </div>
-          <div className="flex gap-2" style={{ color: "rgba(134,201,148,0.6)" }}>
-            → Installing OpenClaw runtime...
-          </div>
-          <div className="flex gap-2" style={{ color: "rgba(134,201,148,0.6)" }}>
-            → Connecting Telegram webhook...
-          </div>
-          <div className="flex gap-2">
-            <span style={{ color: "var(--y)" }}>status</span>
-            <span style={{ color: "rgba(134,201,148,0.3)" }}>:</span>
-            <span style={{ color: "var(--g-light)" }}>✓ Agent online</span>
-          </div>
-          <div className="flex gap-2">
-            <span style={{ color: "var(--y)" }}>uptime</span>
-            <span style={{ color: "rgba(134,201,148,0.3)" }}>:</span>
-            <span style={{ color: "var(--g-light)" }}>99.9%</span>
-          </div>
-          <div className="flex gap-2">
-            <span style={{ color: "var(--y)" }}>endpoint</span>
-            <span style={{ color: "rgba(134,201,148,0.3)" }}>:</span>
-            <span style={{ color: "var(--g-light)" }}>my-agent.monke.is</span>
-          </div>
-          <div className="flex gap-2">
-            <span style={{ color: "var(--g)" }}>$</span>
-            <span
-              className="inline-block h-3.5 w-1.5 rounded-sm"
-              style={{ background: "var(--g)", animation: "blink 1.2s infinite", verticalAlign: "middle" }}
-            />
-          </div>
-        </div>
 
         {/* Stats row */}
         <div
-          className="flex px-5 pt-4 pb-5"
-          style={{ borderTop: "0.5px solid rgba(74,143,93,0.18)", gap: "1.5rem" }}
+          className="flex gap-6 pt-5"
+          style={{ borderTop: "0.5px solid rgba(74,143,93,0.18)" }}
         >
           {[
             { num: "3K+", label: "Community Members" },
             { num: "99.9%", label: "SLA-backed Uptime" },
             { num: "<5min", label: "Deploy Time" },
           ].map((stat) => (
-            <div className="flex-1 text-center" key={stat.label}>
-              <div
-                className="text-xl font-extrabold"
-                style={{ color: "#F0F7F1", letterSpacing: "-0.02em" }}
-              >
+            <div key={stat.label} className="text-center">
+              <div className="text-xl font-extrabold" style={{ color: "#F0F7F1", letterSpacing: "-0.03em", lineHeight: 1, marginBottom: 3 }}>
                 {stat.num}
               </div>
-              <div
-                className="mt-0.5 text-xs"
-                style={{
-                  color: "rgba(134,201,148,0.55)",
-                  letterSpacing: "0.03em",
-                  fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
-                }}
-              >
+              <div className="text-xs uppercase" style={{ color: "rgba(134,201,148,0.4)", letterSpacing: "0.08em", fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace" }}>
                 {stat.label}
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Right: Telegram phone mockup */}
+      <div className="flex justify-center">
+        {/* Phone frame */}
+        <div
+          style={{
+            width: 260,
+            background: "#0F1510",
+            border: "1.5px solid rgba(74,143,93,0.3)",
+            borderRadius: 36,
+            overflow: "hidden",
+          }}
+        >
+          {/* Notch */}
+          <div
+            style={{
+              height: 28,
+              background: "#0A0E0B",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div style={{ width: 60, height: 4, background: "#1E2620", borderRadius: 4 }} />
+          </div>
+
+          {/* TG Header */}
+          <div
+            style={{
+              background: "#17211A",
+              padding: "10px 12px",
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              borderBottom: "0.5px solid rgba(74,143,93,0.15)",
+            }}
+          >
+            <div
+              style={{
+                width: 32, height: 32,
+                borderRadius: "50%",
+                background: "var(--g-dark)",
+                border: "1px solid var(--g)",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontSize: 14, flexShrink: 0,
+              }}
+            >🐵</div>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#E8F2EA", letterSpacing: "-0.01em" }}>My Operator</div>
+              <div style={{ fontSize: 9, color: "var(--g-light)", fontFamily: "var(--font-jetbrains), monospace" }}>online</div>
+            </div>
+            <div style={{ width: 5, height: 5, background: "var(--g-light)", borderRadius: "50%", animation: "pulse 2s infinite" }} />
+          </div>
+
+          {/* Chat body */}
+          <div
+            style={{
+              padding: "10px 10px 12px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+              background: "#0F1510",
+              minHeight: 340,
+            }}
+          >
+            {/* Date divider */}
+            <div style={{ textAlign: "center", fontSize: 9, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", margin: "4px 0" }}>
+              Today, 8:00 AM
+            </div>
+
+            {/* Agent morning brief */}
+            <div style={{ display: "flex", flexDirection: "column", maxWidth: "88%", alignSelf: "flex-start" }}>
+              <div style={{ background: "#1E2E21", border: "0.5px solid rgba(74,143,93,0.2)", borderRadius: "14px 14px 14px 4px", padding: "8px 11px", fontSize: 11, lineHeight: 1.55, color: "#C8E8CC" }}>
+                Good morning. Here&apos;s what&apos;s on your plate today.
+              </div>
+              {/* Brief card */}
+              <div style={{ background: "#17211A", border: "0.5px solid rgba(74,143,93,0.25)", borderRadius: 10, overflow: "hidden", marginTop: 2 }}>
+                <div style={{ background: "#1A2C1D", padding: "5px 9px", fontSize: 9, fontWeight: 700, color: "var(--g-light)", fontFamily: "var(--font-jetbrains), monospace", letterSpacing: "0.05em", display: "flex", alignItems: "center", gap: 5 }}>
+                  <div style={{ width: 5, height: 5, background: "var(--g-light)", borderRadius: "50%" }} />
+                  Morning brief — Apr 10
+                </div>
+                <div style={{ padding: "7px 9px", display: "flex", flexDirection: "column", gap: 4 }}>
+                  {[
+                    { icon: "★", text: "4 unread emails flagged" },
+                    { icon: "↑", text: "2pm meeting has new agenda" },
+                    { icon: "!", text: "1 overdue task from yesterday" },
+                    { icon: "◎", text: "Rest of the day is clear" },
+                  ].map((row) => (
+                    <div key={row.text} style={{ fontSize: 10, color: "rgba(200,232,204,0.8)", display: "flex", gap: 6, alignItems: "flex-start", lineHeight: 1.4 }}>
+                      <span style={{ color: "var(--y)", flexShrink: 0 }}>{row.icon}</span>
+                      {row.text}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div style={{ fontSize: 8, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", marginTop: 3, padding: "0 3px" }}>8:00 AM</div>
+            </div>
+
+            {/* User message */}
+            <div style={{ display: "flex", flexDirection: "column", maxWidth: "88%", alignSelf: "flex-end" }}>
+              <div style={{ background: "#184623", borderRadius: "14px 14px 4px 14px", padding: "8px 11px", fontSize: 11, lineHeight: 1.55, color: "#D4F0D8" }}>
+                Summarize those emails and draft replies
+              </div>
+              <div style={{ fontSize: 8, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", marginTop: 3, padding: "0 3px", textAlign: "right" }}>8:03 AM ✓✓</div>
+            </div>
+
+            {/* Agent reply */}
+            <div style={{ display: "flex", flexDirection: "column", maxWidth: "88%", alignSelf: "flex-start" }}>
+              <div style={{ background: "#1E2E21", border: "0.5px solid rgba(74,143,93,0.2)", borderRadius: "14px 14px 14px 4px", padding: "8px 11px", fontSize: 11, lineHeight: 1.55, color: "#C8E8CC" }}>
+                Done. 4 summaries ready, 3 draft replies written. Send or save as drafts?
+              </div>
+              <div style={{ fontSize: 8, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", marginTop: 3, padding: "0 3px" }}>8:03 AM</div>
+            </div>
+
+            {/* User: save drafts */}
+            <div style={{ display: "flex", flexDirection: "column", maxWidth: "88%", alignSelf: "flex-end" }}>
+              <div style={{ background: "#184623", borderRadius: "14px 14px 4px 14px", padding: "8px 11px", fontSize: 11, lineHeight: 1.55, color: "#D4F0D8" }}>
+                Save as drafts
+              </div>
+              <div style={{ fontSize: 8, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", marginTop: 3, padding: "0 3px", textAlign: "right" }}>8:04 AM ✓✓</div>
+            </div>
+
+            {/* Agent confirmation */}
+            <div style={{ display: "flex", flexDirection: "column", maxWidth: "88%", alignSelf: "flex-start" }}>
+              <div style={{ background: "#1E2E21", border: "0.5px solid rgba(74,143,93,0.2)", borderRadius: "14px 14px 14px 4px", padding: "8px 11px", fontSize: 10, lineHeight: 1.7, color: "var(--g-light)", fontFamily: "var(--font-jetbrains), monospace" }}>
+                ✓ 3 drafts saved to inbox<br />
+                ✓ Overdue task rescheduled<br />
+                ✓ Memory updated
+              </div>
+              <div style={{ fontSize: 8, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", marginTop: 3, padding: "0 3px" }}>8:04 AM</div>
+            </div>
+          </div>
+
+          {/* Input bar */}
+          <div
+            style={{
+              background: "#17211A",
+              padding: "8px 10px",
+              display: "flex",
+              alignItems: "center",
+              gap: 7,
+              borderTop: "0.5px solid rgba(74,143,93,0.15)",
+            }}
+          >
+            <div style={{ flex: 1, background: "#1E2620", borderRadius: 16, height: 26, display: "flex", alignItems: "center", padding: "0 10px" }}>
+              <span style={{ fontSize: 9, color: "rgba(134,201,148,0.25)", fontFamily: "var(--font-jetbrains), monospace" }}>Message operator...</span>
+            </div>
+            <div style={{ width: 24, height: 24, background: "var(--g)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <svg viewBox="0 0 10 10" fill="none" style={{ width: 10, height: 10 }}>
+                <path d="M1 9L9 5L1 1V4.5L6.5 5L1 5.5V9Z" fill="white" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </section>
