@@ -103,7 +103,7 @@ function Hero() {
 
         {/* Channel badges */}
         <div className="flex flex-wrap gap-2">
-          {["Telegram", "Discord", "Google", "More"].map((ch) => (
+          {["Telegram", "Discord", "Slack", "More"].map((ch) => (
             <div
               key={ch}
               className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs"
@@ -379,7 +379,7 @@ const features = [
     icon: "🎛",
     title: "Full control",
     description:
-      "Bring your own AI key or use ours. Choose your integrations — Telegram, Discord, Google — and configure everything your way.",
+      "Bring your own AI key or use ours. Choose your integrations — Telegram, Discord, Slack — and configure everything your way.",
   },
   {
     icon: "🌍",
