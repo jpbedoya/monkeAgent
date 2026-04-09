@@ -746,7 +746,7 @@ function EnterpriseCard() {
 
       {/* CTA */}
       <a
-        href="mailto:enterprise@monke.is"
+        href="mailto:hello@monke.is"
         className="block rounded-lg py-3 text-center text-sm font-bold transition"
         style={{
           border: "1px solid rgba(134,201,148,0.35)",
@@ -809,7 +809,7 @@ function Pricing() {
         style={{ color: "rgba(134,201,148,0.5)", marginBottom: "3rem" }}
       >
         Don&apos;t have an AI subscription? We offer fully managed plans —{" "}
-        <a href="mailto:enterprise@monke.is" className="underline hover:text-[var(--g-light)]">
+        <a href="mailto:hello@monke.is" className="underline hover:text-[var(--g-light)]">
           contact us
         </a>{" "}
         to learn more.
@@ -909,7 +909,7 @@ function Footer() {
               Privacy
             </Link>
             <a
-              href="mailto:enterprise@monke.is"
+              href="mailto:hello@monke.is"
               className="text-xs transition-colors hover:text-[var(--g-light)]"
               style={{ color: "rgba(134,201,148,0.35)", fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace" }}
             >

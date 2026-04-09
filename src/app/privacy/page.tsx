@@ -94,7 +94,7 @@ Aggregate and anonymised usage data (e.g. total request counts with no identifyi
     id: "contact",
     title: "Contact",
     content: `Questions about this policy or how your data is handled? Reach us at:`,
-    email: "enterprise@monke.is",
+    email: "hello@monke.is",
   },
 ];
 
