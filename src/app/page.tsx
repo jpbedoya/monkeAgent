@@ -16,11 +16,7 @@ function Navbar() {
         <Link href="/" className="flex items-center gap-2.5 font-bold text-lg tracking-tight" style={{ color: "#E8F0E9" }}>
           <span
             className="flex h-8 w-8 items-center justify-center rounded-lg border text-lg"
-            style={{
-              background: "var(--g-dark)",
-              border: "1px solid var(--g)",
-              fontSize: 16,
-            }}
+            style={{ background: "var(--g-dark)", border: "1px solid var(--g)", fontSize: 16 }}
           >
             🐵
           </span>
@@ -107,7 +103,7 @@ function Hero() {
         {/* Sub */}
         <p
           className="mb-9 text-base leading-relaxed"
-          style={{ color: "rgba(134,201,148,0.55)", maxWidth: 460, lineHeight: 1.7 }}
+          style={{ color: "rgba(134,201,148,0.65)", maxWidth: 460, lineHeight: 1.75 }}
         >
           No terminal. No server setup. No DevOps. Your own AI running 24/7 on
           dedicated infrastructure — built by MonkeDAO on OpenClaw.
@@ -125,7 +121,7 @@ function Hero() {
           <a
             href="#features"
             className="rounded-lg border px-6 py-3.5 text-sm font-medium transition"
-            style={{ border: "0.5px solid rgba(134,201,148,0.35)", color: "rgba(134,201,148,0.55)" }}
+            style={{ border: "0.5px solid rgba(134,201,148,0.35)", color: "rgba(134,201,148,0.65)" }}
           >
             See how it works
           </a>
@@ -204,7 +200,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* Stats row — marketing-friendly labels */}
+        {/* Stats row */}
         <div
           className="flex px-5 pt-4 pb-5"
           style={{ borderTop: "0.5px solid rgba(74,143,93,0.18)", gap: "1.5rem" }}
@@ -271,7 +267,7 @@ const features = [
     icon: "🎛",
     title: "Full control",
     description:
-      "Bring your own AI key or use ours. Connect Telegram, Discord, Google — all from one dashboard.",
+      "Bring your own API key or use ours. Connect Telegram, Discord, Google — all from one dashboard.",
   },
   {
     icon: "🌍",
@@ -327,16 +323,16 @@ function Features() {
         not engineers.
       </h2>
 
-      {/* Sub */}
+      {/* Sub — increased contrast */}
       <p
         className="mb-12 text-base"
-        style={{ color: "rgba(134,201,148,0.55)", maxWidth: 520, lineHeight: 1.7 }}
+        style={{ color: "rgba(134,201,148,0.65)", maxWidth: 520, lineHeight: 1.75, marginBottom: "3rem" }}
       >
         Everything you need to run a personal AI agent — from first deploy to
         daily operations.
       </p>
 
-      {/* Grid */}
+      {/* Grid — equal-height cards via flex + stretch */}
       <div
         className="grid overflow-hidden rounded-2xl"
         style={{
@@ -344,18 +340,19 @@ function Features() {
           gap: 1,
           background: "rgba(74,143,93,0.18)",
           border: "0.5px solid rgba(74,143,93,0.18)",
+          alignItems: "stretch",
         }}
       >
         {features.map((f) => (
           <div
             key={f.title}
-            className="p-8 transition-colors hover:bg-[#181E19]"
+            className="flex flex-col p-8 transition-colors hover:bg-[#181E19]"
             style={{ background: "var(--surface)" }}
           >
-            {/* Icon box */}
+            {/* Icon box — fixed size, top-aligned */}
             <div
               className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl text-lg"
-              style={{ background: "var(--g-dark)", border: "0.5px solid var(--g)" }}
+              style={{ background: "var(--g-dark)", border: "0.5px solid var(--g)", flexShrink: 0 }}
             >
               {f.icon}
             </div>
@@ -366,10 +363,10 @@ function Features() {
             >
               {f.title}
             </h3>
-            {/* Desc */}
+            {/* Desc — takes remaining space */}
             <p
               className="text-sm leading-relaxed"
-              style={{ color: "rgba(134,201,148,0.55)", lineHeight: 1.65 }}
+              style={{ color: "rgba(134,201,148,0.65)", lineHeight: 1.65, flexGrow: 1 }}
             >
               {f.description}
             </p>
@@ -417,6 +414,242 @@ const plans = [
   },
 ];
 
+const enterpriseFeatures = [
+  "Unlimited OpenClaw instances",
+  "White-label deployment",
+  "Custom AI model fine-tuning",
+  "SLA up to 99.99% uptime",
+  "Dedicated infrastructure",
+  "Onboarding + ongoing support",
+];
+
+function PricingCard({
+  name,
+  price,
+  period,
+  features,
+  cta,
+  highlighted,
+  tag,
+  priceLabel,
+}: {
+  name: string;
+  price: string;
+  period: string;
+  features: string[];
+  cta: string;
+  highlighted: boolean;
+  tag: string | null;
+  priceLabel?: string;
+}) {
+  return (
+    <div
+      className="flex flex-col rounded-2xl p-8"
+      style={{
+        background: highlighted ? "var(--surface2)" : "var(--surface)",
+        border: highlighted
+          ? "1.5px solid var(--g)"
+          : "0.5px solid rgba(74,143,93,0.18)",
+        flexGrow: 1,
+      }}
+    >
+      {/* Badge */}
+      {tag && (
+        <div
+          className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-4 py-1 text-xs font-bold"
+          style={{
+            background: "var(--g)",
+            color: "#0A0E0B",
+            letterSpacing: "0.08em",
+            fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+            position: "absolute",
+            top: 0,
+          }}
+        >
+          {tag}
+        </div>
+      )}
+
+      {/* Plan name */}
+      <div
+        className="mb-3 text-xs font-semibold uppercase"
+        style={{
+          color: "rgba(134,201,148,0.55)",
+          letterSpacing: "0.08em",
+          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+        }}
+      >
+        {name}
+      </div>
+
+      {/* Price */}
+      <div className="mb-1 flex items-baseline gap-0.5">
+        <span
+          className="font-extrabold"
+          style={{ color: "#F0F7F1", letterSpacing: "-0.04em", lineHeight: 1, fontSize: priceLabel ? "2rem" : "3rem" }}
+        >
+          {priceLabel ?? `$${price}`}
+        </span>
+      </div>
+      <div
+        className="mb-8 text-xs"
+        style={{
+          color: "rgba(134,201,148,0.4)",
+          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+          marginBottom: "2rem",
+        }}
+      >
+        {period}
+      </div>
+
+      {/* Features — pushes CTA to bottom via flex-1 */}
+      <ul className="mb-8 flex-1 space-y-3">
+        {features.map((feature) => (
+          <li
+            key={feature}
+            className="flex items-center gap-2.5 text-sm"
+            style={{ color: "rgba(134,201,148,0.65)", lineHeight: 1.5 }}
+          >
+            <span
+              className="flex h-4 w-4 shrink-0 items-center justify-center rounded"
+              style={{ background: "var(--g-dark)", border: "0.5px solid var(--g)" }}
+            >
+              <svg viewBox="0 0 10 10" fill="none" className="h-2.5 w-2.5">
+                <polyline
+                  points="1.5,5 4,7.5 8.5,2.5"
+                  stroke="#86C994"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            {feature}
+          </li>
+        ))}
+      </ul>
+
+      {/* CTA — always at bottom */}
+      <Link
+        href="/signup"
+        className="block rounded-lg py-3 text-center text-sm font-bold transition"
+        style={{
+          border: highlighted
+            ? "1px solid var(--g)"
+            : "1px solid rgba(134,201,148,0.35)",
+          background: highlighted ? "var(--g)" : "transparent",
+          color: highlighted ? "#0A0E0B" : "var(--g-light)",
+          marginTop: "auto",
+        }}
+      >
+        {cta}
+      </Link>
+    </div>
+  );
+}
+
+function EnterpriseCard() {
+  return (
+    <div
+      className="flex flex-col rounded-2xl p-8"
+      style={{
+        background: "var(--surface)",
+        border: "0.5px solid rgba(74,143,93,0.18)",
+        flexGrow: 1,
+      }}
+    >
+      {/* Badge */}
+      <div
+        className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-4 py-1 text-xs font-bold"
+        style={{
+          background: "var(--surface3)",
+          color: "var(--g-light)",
+          border: "0.5px solid rgba(74,143,93,0.35)",
+          letterSpacing: "0.08em",
+          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+          position: "absolute",
+          top: 0,
+        }}
+      >
+        Custom
+      </div>
+
+      {/* Plan name */}
+      <div
+        className="mb-3 text-xs font-semibold uppercase"
+        style={{
+          color: "rgba(134,201,148,0.55)",
+          letterSpacing: "0.08em",
+          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+        }}
+      >
+        Enterprise
+      </div>
+
+      {/* Price */}
+      <div className="mb-1 flex items-baseline gap-0.5">
+        <span
+          className="font-extrabold"
+          style={{ color: "#F0F7F1", letterSpacing: "-0.03em", lineHeight: 1, fontSize: "2rem" }}
+        >
+          Let&apos;s talk
+        </span>
+      </div>
+      <div
+        className="mb-8 text-xs"
+        style={{
+          color: "rgba(134,201,148,0.4)",
+          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+          marginBottom: "2rem",
+        }}
+      >
+        tailored to your needs
+      </div>
+
+      {/* Features */}
+      <ul className="mb-8 flex-1 space-y-3">
+        {enterpriseFeatures.map((feature) => (
+          <li
+            key={feature}
+            className="flex items-center gap-2.5 text-sm"
+            style={{ color: "rgba(134,201,148,0.65)", lineHeight: 1.5 }}
+          >
+            <span
+              className="flex h-4 w-4 shrink-0 items-center justify-center rounded"
+              style={{ background: "var(--g-dark)", border: "0.5px solid var(--g)" }}
+            >
+              <svg viewBox="0 0 10 10" fill="none" className="h-2.5 w-2.5">
+                <polyline
+                  points="1.5,5 4,7.5 8.5,2.5"
+                  stroke="#86C994"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            {feature}
+          </li>
+        ))}
+      </ul>
+
+      {/* CTA */}
+      <a
+        href="mailto:enterprise@monke.is"
+        className="block rounded-lg py-3 text-center text-sm font-bold transition"
+        style={{
+          border: "1px solid rgba(134,201,148,0.35)",
+          color: "var(--g-light)",
+          background: "transparent",
+          marginTop: "auto",
+        }}
+      >
+        Contact Us
+      </a>
+    </div>
+  );
+}
+
 function Pricing() {
   return (
     <section
@@ -454,7 +687,7 @@ function Pricing() {
       {/* Sub */}
       <p
         className="mb-4 text-base"
-        style={{ color: "rgba(134,201,148,0.55)", maxWidth: 520, lineHeight: 1.7 }}
+        style={{ color: "rgba(134,201,148,0.65)", maxWidth: 520, lineHeight: 1.75 }}
       >
         Server hosting from $9/mo. Bring your own AI key or let us handle it.
         No hidden fees.
@@ -463,7 +696,7 @@ function Pricing() {
       {/* Managed footnote */}
       <p
         className="mb-12 text-sm italic"
-        style={{ color: "rgba(134,201,148,0.4)", marginBottom: "3rem" }}
+        style={{ color: "rgba(134,201,148,0.5)", marginBottom: "3rem" }}
       >
         Don&apos;t have an AI subscription? We offer fully managed plans —{" "}
         <a href="#" className="underline hover:text-[var(--g-light)]">
@@ -472,211 +705,39 @@ function Pricing() {
         to learn more.
       </p>
 
-      {/* Cards — 3 columns */}
+      {/* Cards grid — all cards stretch to equal height */}
       <div
         className="grid gap-6"
-        style={{ gridTemplateColumns: "repeat(3, 1fr)", maxWidth: 960 }}
+        style={{
+          gridTemplateColumns: "repeat(3, 1fr)",
+          maxWidth: 1080,
+          alignItems: "stretch",
+        }}
       >
-        {plans.map((plan) => (
-          <div
-            key={plan.name}
-            className="relative flex flex-col rounded-2xl p-8"
-            style={{
-              background: plan.highlighted ? "var(--surface2)" : "var(--surface)",
-              border: plan.highlighted
-                ? "1.5px solid var(--g)"
-                : "0.5px solid rgba(74,143,93,0.18)",
-            }}
-          >
-            {/* Badge */}
-            {plan.tag && (
-              <div
-                className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-4 py-1 text-xs font-bold"
-                style={{
-                  background: "var(--g)",
-                  color: "#0A0E0B",
-                  letterSpacing: "0.08em",
-                  fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
-                }}
-              >
-                {plan.tag}
-              </div>
-            )}
-
-            {/* Plan name */}
-            <div
-              className="mb-3 text-xs font-semibold uppercase"
-              style={{
-                color: "rgba(134,201,148,0.55)",
-                letterSpacing: "0.08em",
-                fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
-              }}
-            >
-              {plan.name}
-            </div>
-
-            {/* Price */}
-            <div className="mb-1 flex items-baseline gap-0.5">
-              <span
-                className="text-5xl font-extrabold"
-                style={{ color: "#F0F7F1", letterSpacing: "-0.04em", lineHeight: 1 }}
-              >
-                ${plan.price}
-              </span>
-            </div>
-            <div
-              className="mb-7 text-xs"
-              style={{
-                color: "rgba(134,201,148,0.4)",
-                fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
-                marginBottom: "1.75rem",
-              }}
-            >
-              {plan.period}
-            </div>
-
-            {/* Features */}
-            <ul className="mb-8 flex-1 space-y-3">
-              {plan.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-center gap-2.5 text-sm"
-                  style={{ color: "rgba(134,201,148,0.55)", lineHeight: 1.5 }}
-                >
-                  <span
-                    className="flex h-4 w-4 shrink-0 items-center justify-center rounded"
-                    style={{ background: "var(--g-dark)", border: "0.5px solid var(--g)" }}
-                  >
-                    <svg viewBox="0 0 10 10" fill="none" className="h-2.5 w-2.5">
-                      <polyline
-                        points="1.5,5 4,7.5 8.5,2.5"
-                        stroke="#86C994"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA button */}
-            <Link
-              href="/signup"
-              className="block rounded-lg py-3 text-center text-sm font-bold transition"
-              style={{
-                border: plan.highlighted ? "1px solid var(--g)" : "0.5px solid rgba(134,201,148,0.35)",
-                background: plan.highlighted ? "var(--g)" : "transparent",
-                color: plan.highlighted ? "#0A0E0B" : "var(--g-light)",
-              }}
-            >
-              {plan.cta}
-            </Link>
-          </div>
-        ))}
-
-        {/* Enterprise card */}
-        <div
-          className="relative flex flex-col rounded-2xl p-8"
-          style={{
-            background: "var(--surface)",
-            border: "0.5px solid rgba(74,143,93,0.18)",
-          }}
-        >
-          {/* "Custom" badge */}
-          <div
-            className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-4 py-1 text-xs font-bold"
-            style={{
-              background: "var(--surface3)",
-              color: "var(--g-light)",
-              border: "0.5px solid rgba(74,143,93,0.35)",
-              letterSpacing: "0.08em",
-              fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
-            }}
-          >
-            Custom
-          </div>
-
-          {/* Plan name */}
-          <div
-            className="mb-3 text-xs font-semibold uppercase"
-            style={{
-              color: "rgba(134,201,148,0.55)",
-              letterSpacing: "0.08em",
-              fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
-            }}
-          >
-            Enterprise
-          </div>
-
-          {/* Price */}
-          <div className="mb-1 flex items-baseline gap-0.5">
-            <span
-              className="text-3xl font-extrabold"
-              style={{ color: "#F0F7F1", letterSpacing: "-0.03em", lineHeight: 1 }}
-            >
-              Let&apos;s talk
-            </span>
-          </div>
-          <div
-            className="mb-7 text-xs"
-            style={{
-              color: "rgba(134,201,148,0.4)",
-              fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
-              marginBottom: "1.75rem",
-            }}
-          >
-            tailored to your needs
-          </div>
-
-          {/* Features */}
-          <ul className="mb-8 flex-1 space-y-3">
-            {[
-              "Unlimited OpenClaw instances",
-              "White-label deployment",
-              "Custom AI model fine-tuning",
-              "SLA up to 99.99% uptime",
-              "Dedicated infrastructure",
-              "Onboarding + ongoing support",
-            ].map((feature) => (
-              <li
-                key={feature}
-                className="flex items-center gap-2.5 text-sm"
-                style={{ color: "rgba(134,201,148,0.55)", lineHeight: 1.5 }}
-              >
-                <span
-                  className="flex h-4 w-4 shrink-0 items-center justify-center rounded"
-                  style={{ background: "var(--g-dark)", border: "0.5px solid var(--g)" }}
-                >
-                  <svg viewBox="0 0 10 10" fill="none" className="h-2.5 w-2.5">
-                    <polyline
-                      points="1.5,5 4,7.5 8.5,2.5"
-                      stroke="#86C994"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-                {feature}
-              </li>
-            ))}
-          </ul>
-
-          {/* CTA button */}
-          <a
-            href="mailto:enterprise@monke.is"
-            className="block rounded-lg py-3 text-center text-sm font-bold transition"
-            style={{
-              border: "0.5px solid rgba(134,201,148,0.35)",
-              color: "var(--g-light)",
-              background: "transparent",
-            }}
-          >
-            Contact Us
-          </a>
+        <div className="relative">
+          <PricingCard
+            name="Community"
+            price="9"
+            period="/ month"
+            features={plans[0].features}
+            cta={plans[0].cta}
+            highlighted={false}
+            tag={null}
+          />
+        </div>
+        <div className="relative">
+          <PricingCard
+            name="Pro"
+            price="29"
+            period="/ month"
+            features={plans[1].features}
+            cta={plans[1].cta}
+            highlighted={true}
+            tag="Most Popular"
+          />
+        </div>
+        <div className="relative">
+          <EnterpriseCard />
         </div>
       </div>
     </section>
