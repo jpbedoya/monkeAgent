@@ -7,7 +7,7 @@ function Navbar() {
         <Link href="/" className="flex items-center gap-2 text-xl font-bold">
           <span className="text-2xl">🐵</span>
           <span className="text-mk-ivory">
-            monke<span className="text-mk-yellow">Agent</span>
+            Monke<span className="text-mk-yellow">Agent</span>
           </span>
         </Link>
         <div className="flex items-center gap-6">
@@ -249,7 +249,7 @@ function Footer() {
         <div className="flex items-center gap-2 text-sm text-mk-ivory/50">
           <span className="text-lg">🐵</span>
           <span>
-            monke<span className="text-mk-yellow">Agent</span> &copy; 2026
+            Monke<span className="text-mk-yellow">Agent</span> &copy; 2026
             MonkeDAO
           </span>
         </div>

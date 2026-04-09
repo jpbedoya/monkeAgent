@@ -50,7 +50,7 @@ function StepCreateAccount({ onNext }: { onNext: () => void }) {
           Create your account
         </h2>
         <p className="text-sm text-mk-ivory/50">
-          Get your monkeAgent up and running in minutes
+          Get your MonkeAgent up and running in minutes
         </p>
       </div>
 
@@ -138,7 +138,7 @@ function StepTelegram({ onNext }: { onNext: () => void }) {
           Connect your Telegram Bot
         </h2>
         <p className="text-sm text-mk-ivory/50">
-          Your monkeAgent will communicate through this bot
+          Your MonkeAgent will communicate through this bot
         </p>
       </div>
 
@@ -360,7 +360,7 @@ function StepLaunch() {
       >
         <div className="mb-6 text-6xl">🐵</div>
         <h2 className="mb-3 text-3xl font-bold text-mk-ivory">
-          Your monkeAgent is live! 🎉
+          Your MonkeAgent is live! 🎉
         </h2>
         <p className="mb-2 text-mk-ivory/50">
           Your AI agent is deployed and running. Powered by OpenClaw.
@@ -395,7 +395,7 @@ function StepLaunch() {
           Provisioning your server...
         </h2>
         <p className="mb-6 text-sm text-mk-ivory/50">
-          Spinning up your monkeAgent on Hetzner Ashburn...
+          Spinning up your MonkeAgent on Hetzner Ashburn...
         </p>
         <div className="overflow-hidden rounded-full bg-mk-green/20">
           <motion.div
@@ -453,7 +453,7 @@ function StepLaunch() {
         onClick={handleLaunch}
         className="w-full rounded-xl bg-mk-yellow py-3 text-lg font-semibold text-mk-dark-green transition hover:bg-mk-yellow/90"
       >
-        🚀 Launch My monkeAgent
+        🚀 Launch My MonkeAgent
       </button>
     </div>
   );
@@ -469,7 +469,7 @@ export default function SignupPage() {
         <Link href="/" className="flex items-center gap-2 text-xl font-bold">
           <span className="text-2xl">🐵</span>
           <span className="text-mk-ivory">
-            monke<span className="text-mk-yellow">Agent</span>
+            Monke<span className="text-mk-yellow">Agent</span>
           </span>
         </Link>
       </div>
