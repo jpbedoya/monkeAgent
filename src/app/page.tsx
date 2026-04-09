@@ -40,7 +40,7 @@ function Navbar() {
           className="rounded-md px-5 py-2 text-sm font-semibold transition hover:opacity-90"
           style={{ background: "var(--g)", color: "#0A0E0B", letterSpacing: "0.02em" }}
         >
-          Deploy Free
+          Get Early Access
         </Link>
       </div>
     </nav>
@@ -127,7 +127,7 @@ function Hero() {
             className="rounded-lg px-7 py-3.5 text-sm font-bold transition hover:translate-y-[-1px]"
             style={{ background: "var(--g)", color: "#0A0E0B", letterSpacing: "0.01em" }}
           >
-            Deploy Free
+            Get Early Access
           </Link>
           <a
             href="#features"
@@ -338,7 +338,7 @@ const features = [
     icon: "⚡",
     title: "No terminal needed",
     description:
-      "Configure everything through a clean web wizard. No SSH, no CLI, no DevOps experience required.",
+      "Set up your agent through a simple step-by-step process. No SSH, no CLI, no DevOps experience required.",
   },
   {
     icon: "🔒",
@@ -350,7 +350,7 @@ const features = [
     icon: "🎛",
     title: "Full control",
     description:
-      "Bring your own API key or use ours. Connect Telegram, Discord, Google — all from one dashboard.",
+      "Bring your own AI key or use ours. Choose your integrations — Telegram, Discord, Google — and configure everything your way.",
   },
   {
     icon: "🌍",
@@ -362,13 +362,13 @@ const features = [
     icon: "🤖",
     title: "Multi-model support",
     description:
-      "Choose from ChatGPT, Gemini, Kimi, MiniMax, and more. Switch providers anytime from your dashboard.",
+      "Choose from ChatGPT, Gemini, MiniMax, and more supported providers. Switch anytime — no lock-in.",
   },
   {
     icon: "🐵",
     title: "Community-built",
     description:
-      "Built by MonkeDAO on OpenClaw. 3,000+ members across 80+ countries shaping personal AI together.",
+      "Built by MonkeDAO on OpenClaw. 3,000+ members strong and growing — shaping what personal AI looks like.",
   },
 ];
 
@@ -388,7 +388,7 @@ function Features() {
           fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
         }}
       >
-        -- What&apos;s inside
+        What&apos;s included
       </div>
 
       {/* Title */}
@@ -475,7 +475,7 @@ const plans = [
       "5 GB storage",
       "99.5% uptime SLA",
     ],
-    cta: "Get Started",
+    cta: "Request Access",
     highlighted: false,
     tag: null,
   },
@@ -486,12 +486,12 @@ const plans = [
     features: [
       "3 OpenClaw instances",
       "Telegram + Discord + Google",
-      "All AI providers (BYOK)",
+      "All supported AI providers",
       "Custom domain",
       "25 GB storage + daily backups",
       "Priority support + 99.9% SLA",
     ],
-    cta: "Get Started",
+    cta: "Request Access",
     highlighted: true,
     tag: "Most Popular",
   },
@@ -749,7 +749,7 @@ function Pricing() {
           fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
         }}
       >
-        -- Pricing
+        Pricing
       </div>
 
       {/* Title */}
