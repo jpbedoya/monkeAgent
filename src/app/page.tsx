@@ -6,14 +6,13 @@ import Link from "next/link";
 function Navbar() {
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 border-b border-[rgba(74,143,93,0.18)] bg-[rgba(10,14,11,0.92)] backdrop-blur-xl"
-      style={{ maxWidth: "100%", borderBottom: "0.5px solid rgba(74,143,93,0.18)" }}
+      className="fixed top-0 left-0 right-0 z-50 bg-[rgba(10,14,11,0.92)] backdrop-blur-xl"
+      style={{ borderBottom: "0.5px solid rgba(74,143,93,0.18)" }}
     >
       <div
         className="mx-auto flex items-center justify-between px-8 py-4"
-        style={{ maxWidth: 1100 }}
+        style={{ maxWidth: 1200 }}
       >
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 font-bold text-lg tracking-tight" style={{ color: "#E8F0E9" }}>
           <span
             className="flex h-8 w-8 items-center justify-center rounded-lg border text-lg"
@@ -28,40 +27,22 @@ function Navbar() {
           MonkeAgent
         </Link>
 
-        {/* Links */}
         <div className="hidden items-center gap-8 sm:flex">
-          <a
-            href="#features"
-            className="text-xs font-medium uppercase tracking-widest transition-colors hover:text-[var(--g-light)]"
-            style={{ color: "rgba(134,201,148,0.55)", letterSpacing: "0.04em" }}
-          >
+          <a href="#features" className="text-xs font-medium uppercase tracking-widest transition-colors hover:text-[var(--g-light)]" style={{ color: "rgba(134,201,148,0.55)", letterSpacing: "0.04em" }}>
             Features
           </a>
-          <a
-            href="#pricing"
-            className="text-xs font-medium uppercase tracking-widest transition-colors hover:text-[var(--g-light)]"
-            style={{ color: "rgba(134,201,148,0.55)", letterSpacing: "0.04em" }}
-          >
+          <a href="#pricing" className="text-xs font-medium uppercase tracking-widest transition-colors hover:text-[var(--g-light)]" style={{ color: "rgba(134,201,148,0.55)", letterSpacing: "0.04em" }}>
             Pricing
           </a>
-          <a
-            href="#"
-            className="text-xs font-medium uppercase tracking-widest transition-colors hover:text-[var(--g-light)]"
-            style={{ color: "rgba(134,201,148,0.55)", letterSpacing: "0.04em" }}
-          >
+          <a href="#" className="text-xs font-medium uppercase tracking-widest transition-colors hover:text-[var(--g-light)]" style={{ color: "rgba(134,201,148,0.55)", letterSpacing: "0.04em" }}>
             Docs
           </a>
         </div>
 
-        {/* CTA */}
         <Link
           href="/signup"
           className="rounded-md px-5 py-2 text-sm font-semibold transition hover:opacity-90"
-          style={{
-            background: "var(--g)",
-            color: "#0A0E0B",
-            letterSpacing: "0.02em",
-          }}
+          style={{ background: "var(--g)", color: "#0A0E0B", letterSpacing: "0.02em" }}
         >
           Deploy Free
         </Link>
@@ -78,10 +59,10 @@ function Hero() {
     <section
       className="grid min-h-screen items-center px-8 pt-24"
       style={{
-        maxWidth: 1100,
+        maxWidth: 1200,
         margin: "0 auto",
         gridTemplateColumns: "1fr 1fr",
-        gap: "4rem",
+        gap: "5rem",
         paddingTop: "7rem",
         paddingBottom: "5rem",
       }}
@@ -108,9 +89,9 @@ function Hero() {
 
         {/* Headline */}
         <h1
-          className="mb-6 text-5xl font-extrabold leading-tight tracking-tight"
+          className="mb-6 font-extrabold leading-tight tracking-tight"
           style={{
-            fontSize: "clamp(2.6rem, 5vw, 3.8rem)",
+            fontSize: "clamp(2.6rem, 5vw, 4rem)",
             letterSpacing: "-0.035em",
             lineHeight: 1.05,
             color: "#F0F7F1",
@@ -126,11 +107,7 @@ function Hero() {
         {/* Sub */}
         <p
           className="mb-9 text-base leading-relaxed"
-          style={{
-            color: "rgba(134,201,148,0.55)",
-            maxWidth: 440,
-            lineHeight: 1.7,
-          }}
+          style={{ color: "rgba(134,201,148,0.55)", maxWidth: 460, lineHeight: 1.7 }}
         >
           No terminal. No server setup. No DevOps. Your own AI running 24/7 on
           dedicated infrastructure — built by MonkeDAO on OpenClaw.
@@ -141,21 +118,14 @@ function Hero() {
           <Link
             href="/signup"
             className="rounded-lg px-7 py-3.5 text-sm font-bold transition hover:translate-y-[-1px]"
-            style={{
-              background: "var(--g)",
-              color: "#0A0E0B",
-              letterSpacing: "0.01em",
-            }}
+            style={{ background: "var(--g)", color: "#0A0E0B", letterSpacing: "0.01em" }}
           >
             Deploy Free
           </Link>
           <a
             href="#features"
             className="rounded-lg border px-6 py-3.5 text-sm font-medium transition"
-            style={{
-              border: "0.5px solid rgba(134,201,148,0.35)",
-              color: "rgba(134,201,148,0.55)",
-            }}
+            style={{ border: "0.5px solid rgba(134,201,148,0.35)", color: "rgba(134,201,148,0.55)" }}
           >
             See how it works
           </a>
@@ -165,18 +135,12 @@ function Hero() {
       {/* Right: terminal */}
       <div
         className="overflow-hidden rounded-2xl"
-        style={{
-          background: "var(--surface2)",
-          border: "0.5px solid rgba(74,143,93,0.18)",
-        }}
+        style={{ background: "var(--surface2)", border: "0.5px solid rgba(74,143,93,0.18)" }}
       >
         {/* Terminal bar */}
         <div
           className="flex items-center gap-2 px-4 py-3"
-          style={{
-            background: "var(--surface3)",
-            borderBottom: "0.5px solid rgba(74,143,93,0.18)",
-          }}
+          style={{ background: "var(--surface3)", borderBottom: "0.5px solid rgba(74,143,93,0.18)" }}
         >
           <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#FF5F56" }} />
           <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#FFBD2E" }} />
@@ -197,7 +161,7 @@ function Hero() {
         <div
           className="p-5 font-medium"
           style={{
-            minHeight: 220,
+            minHeight: 240,
             fontSize: 12.5,
             lineHeight: 2,
             fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
@@ -235,27 +199,20 @@ function Hero() {
             <span style={{ color: "var(--g)" }}>$</span>
             <span
               className="inline-block h-3.5 w-1.5 rounded-sm"
-              style={{
-                background: "var(--g)",
-                animation: "blink 1.2s infinite",
-                verticalAlign: "middle",
-              }}
+              style={{ background: "var(--g)", animation: "blink 1.2s infinite", verticalAlign: "middle" }}
             />
           </div>
         </div>
 
-        {/* Stats row */}
+        {/* Stats row — marketing-friendly labels */}
         <div
-          className="flex gap-4 px-5 pt-4"
-          style={{
-            borderTop: "0.5px solid rgba(74,143,93,0.18)",
-            marginTop: 0,
-          }}
+          className="flex px-5 pt-4 pb-5"
+          style={{ borderTop: "0.5px solid rgba(74,143,93,0.18)", gap: "1.5rem" }}
         >
           {[
-            { num: "3K+", label: "Members" },
-            { num: "99.9%", label: "Uptime" },
-            { num: "<5min", label: "Setup" },
+            { num: "3K+", label: "Community Members" },
+            { num: "99.9%", label: "SLA-backed Uptime" },
+            { num: "<5min", label: "Deploy Time" },
           ].map((stat) => (
             <div className="flex-1 text-center" key={stat.label}>
               <div
@@ -265,10 +222,10 @@ function Hero() {
                 {stat.num}
               </div>
               <div
-                className="mt-0.5 text-xs uppercase"
+                className="mt-0.5 text-xs"
                 style={{
                   color: "rgba(134,201,148,0.55)",
-                  letterSpacing: "0.06em",
+                  letterSpacing: "0.03em",
                   fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
                 }}
               >
@@ -277,7 +234,6 @@ function Hero() {
             </div>
           ))}
         </div>
-        <div className="pb-5" />
       </div>
     </section>
   );
@@ -290,11 +246,7 @@ function Divider() {
   return (
     <div
       className="mx-auto"
-      style={{
-        height: 0.5,
-        background: "rgba(74,143,93,0.18)",
-        maxWidth: 1100,
-      }}
+      style={{ height: 0.5, background: "rgba(74,143,93,0.18)", maxWidth: 1200 }}
     />
   );
 }
@@ -319,7 +271,7 @@ const features = [
     icon: "🎛",
     title: "Full control",
     description:
-      "Bring your own API key or use ours. Connect Telegram, Discord, Google — all from one dashboard.",
+      "Bring your own AI key or use ours. Connect Telegram, Discord, Google — all from one dashboard.",
   },
   {
     icon: "🌍",
@@ -345,8 +297,8 @@ function Features() {
   return (
     <section
       id="features"
-      className="px-8 py-20"
-      style={{ maxWidth: 1100, margin: "0 auto" }}
+      className="px-8 py-24"
+      style={{ maxWidth: 1200, margin: "0 auto" }}
     >
       {/* Section label */}
       <div
@@ -378,12 +330,7 @@ function Features() {
       {/* Sub */}
       <p
         className="mb-12 text-base"
-        style={{
-          color: "rgba(134,201,148,0.55)",
-          maxWidth: 500,
-          lineHeight: 1.7,
-          marginBottom: "3rem",
-        }}
+        style={{ color: "rgba(134,201,148,0.55)", maxWidth: 520, lineHeight: 1.7 }}
       >
         Everything you need to run a personal AI agent — from first deploy to
         daily operations.
@@ -402,26 +349,20 @@ function Features() {
         {features.map((f) => (
           <div
             key={f.title}
-            className="p-7 transition-colors hover:bg-[#181E19]"
+            className="p-8 transition-colors hover:bg-[#181E19]"
             style={{ background: "var(--surface)" }}
           >
             {/* Icon box */}
             <div
               className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl text-lg"
-              style={{
-                background: "var(--g-dark)",
-                border: "0.5px solid var(--g)",
-              }}
+              style={{ background: "var(--g-dark)", border: "0.5px solid var(--g)" }}
             >
               {f.icon}
             </div>
             {/* Title */}
             <h3
               className="mb-2 text-base font-bold"
-              style={{
-                color: "#E8F0E9",
-                letterSpacing: "-0.01em",
-              }}
+              style={{ color: "#E8F0E9", letterSpacing: "-0.01em" }}
             >
               {f.title}
             </h3>
@@ -456,6 +397,7 @@ const plans = [
     ],
     cta: "Get Started",
     highlighted: false,
+    tag: null,
   },
   {
     name: "Pro",
@@ -471,6 +413,7 @@ const plans = [
     ],
     cta: "Get Started",
     highlighted: true,
+    tag: "Most Popular",
   },
 ];
 
@@ -478,8 +421,8 @@ function Pricing() {
   return (
     <section
       id="pricing"
-      className="px-8 py-20"
-      style={{ maxWidth: 1100, margin: "0 auto" }}
+      className="px-8 py-24"
+      style={{ maxWidth: 1200, margin: "0 auto" }}
     >
       {/* Section label */}
       <div
@@ -511,11 +454,7 @@ function Pricing() {
       {/* Sub */}
       <p
         className="mb-4 text-base"
-        style={{
-          color: "rgba(134,201,148,0.55)",
-          maxWidth: 500,
-          lineHeight: 1.7,
-        }}
+        style={{ color: "rgba(134,201,148,0.55)", maxWidth: 520, lineHeight: 1.7 }}
       >
         Server hosting from $9/mo. Bring your own AI key or let us handle it.
         No hidden fees.
@@ -533,15 +472,15 @@ function Pricing() {
         to learn more.
       </p>
 
-      {/* Cards grid */}
+      {/* Cards — 3 columns */}
       <div
         className="grid gap-6"
-        style={{ gridTemplateColumns: "1fr 1fr", maxWidth: 700 }}
+        style={{ gridTemplateColumns: "repeat(3, 1fr)", maxWidth: 960 }}
       >
         {plans.map((plan) => (
           <div
             key={plan.name}
-            className="relative rounded-2xl p-8 transition-colors"
+            className="relative flex flex-col rounded-2xl p-8"
             style={{
               background: plan.highlighted ? "var(--surface2)" : "var(--surface)",
               border: plan.highlighted
@@ -550,18 +489,17 @@ function Pricing() {
             }}
           >
             {/* Badge */}
-            {plan.highlighted && (
+            {plan.tag && (
               <div
                 className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-4 py-1 text-xs font-bold"
                 style={{
                   background: "var(--g)",
                   color: "#0A0E0B",
                   letterSpacing: "0.08em",
-                  textTransform: "uppercase",
                   fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
                 }}
               >
-                Most Popular
+                {plan.tag}
               </div>
             )}
 
@@ -581,11 +519,7 @@ function Pricing() {
             <div className="mb-1 flex items-baseline gap-0.5">
               <span
                 className="text-5xl font-extrabold"
-                style={{
-                  color: "#F0F7F1",
-                  letterSpacing: "-0.04em",
-                  lineHeight: 1,
-                }}
+                style={{ color: "#F0F7F1", letterSpacing: "-0.04em", lineHeight: 1 }}
               >
                 ${plan.price}
               </span>
@@ -602,26 +536,18 @@ function Pricing() {
             </div>
 
             {/* Features */}
-            <ul className="mb-8 space-y-3">
+            <ul className="mb-8 flex-1 space-y-3">
               {plan.features.map((feature) => (
                 <li
                   key={feature}
                   className="flex items-center gap-2.5 text-sm"
                   style={{ color: "rgba(134,201,148,0.55)", lineHeight: 1.5 }}
                 >
-                  {/* Check icon */}
                   <span
                     className="flex h-4 w-4 shrink-0 items-center justify-center rounded"
-                    style={{
-                      background: "var(--g-dark)",
-                      border: "0.5px solid var(--g)",
-                    }}
+                    style={{ background: "var(--g-dark)", border: "0.5px solid var(--g)" }}
                   >
-                    <svg
-                      viewBox="0 0 10 10"
-                      fill="none"
-                      className="h-2.5 w-2.5"
-                    >
+                    <svg viewBox="0 0 10 10" fill="none" className="h-2.5 w-2.5">
                       <polyline
                         points="1.5,5 4,7.5 8.5,2.5"
                         stroke="#86C994"
@@ -650,6 +576,108 @@ function Pricing() {
             </Link>
           </div>
         ))}
+
+        {/* Enterprise card */}
+        <div
+          className="relative flex flex-col rounded-2xl p-8"
+          style={{
+            background: "var(--surface)",
+            border: "0.5px solid rgba(74,143,93,0.18)",
+          }}
+        >
+          {/* "Custom" badge */}
+          <div
+            className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-4 py-1 text-xs font-bold"
+            style={{
+              background: "var(--surface3)",
+              color: "var(--g-light)",
+              border: "0.5px solid rgba(74,143,93,0.35)",
+              letterSpacing: "0.08em",
+              fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+            }}
+          >
+            Custom
+          </div>
+
+          {/* Plan name */}
+          <div
+            className="mb-3 text-xs font-semibold uppercase"
+            style={{
+              color: "rgba(134,201,148,0.55)",
+              letterSpacing: "0.08em",
+              fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+            }}
+          >
+            Enterprise
+          </div>
+
+          {/* Price */}
+          <div className="mb-1 flex items-baseline gap-0.5">
+            <span
+              className="text-3xl font-extrabold"
+              style={{ color: "#F0F7F1", letterSpacing: "-0.03em", lineHeight: 1 }}
+            >
+              Let&apos;s talk
+            </span>
+          </div>
+          <div
+            className="mb-7 text-xs"
+            style={{
+              color: "rgba(134,201,148,0.4)",
+              fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+              marginBottom: "1.75rem",
+            }}
+          >
+            tailored to your needs
+          </div>
+
+          {/* Features */}
+          <ul className="mb-8 flex-1 space-y-3">
+            {[
+              "Unlimited OpenClaw instances",
+              "White-label deployment",
+              "Custom AI model fine-tuning",
+              "SLA up to 99.99% uptime",
+              "Dedicated infrastructure",
+              "Onboarding + ongoing support",
+            ].map((feature) => (
+              <li
+                key={feature}
+                className="flex items-center gap-2.5 text-sm"
+                style={{ color: "rgba(134,201,148,0.55)", lineHeight: 1.5 }}
+              >
+                <span
+                  className="flex h-4 w-4 shrink-0 items-center justify-center rounded"
+                  style={{ background: "var(--g-dark)", border: "0.5px solid var(--g)" }}
+                >
+                  <svg viewBox="0 0 10 10" fill="none" className="h-2.5 w-2.5">
+                    <polyline
+                      points="1.5,5 4,7.5 8.5,2.5"
+                      stroke="#86C994"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA button */}
+          <a
+            href="mailto:enterprise@monke.is"
+            className="block rounded-lg py-3 text-center text-sm font-bold transition"
+            style={{
+              border: "0.5px solid rgba(134,201,148,0.35)",
+              color: "var(--g-light)",
+              background: "transparent",
+            }}
+          >
+            Contact Us
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -662,11 +690,7 @@ function Footer() {
   return (
     <footer
       className="px-8 py-10"
-      style={{
-        borderTop: "0.5px solid rgba(74,143,93,0.18)",
-        maxWidth: 1100,
-        margin: "0 auto",
-      }}
+      style={{ borderTop: "0.5px solid rgba(74,143,93,0.18)", maxWidth: 1200, margin: "0 auto" }}
     >
       <div className="flex items-center justify-between">
         {/* Left */}
@@ -677,11 +701,7 @@ function Footer() {
           >
             <span
               className="flex h-8 w-8 items-center justify-center rounded-lg border text-lg"
-              style={{
-                background: "var(--g-dark)",
-                border: "1px solid var(--g)",
-                fontSize: 16,
-              }}
+              style={{ background: "var(--g-dark)", border: "1px solid var(--g)", fontSize: 16 }}
             >
               🐵
             </span>
@@ -689,10 +709,7 @@ function Footer() {
           </div>
           <div
             className="text-xs"
-            style={{
-              color: "rgba(134,201,148,0.35)",
-              fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
-            }}
+            style={{ color: "rgba(134,201,148,0.35)", fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace" }}
           >
             © 2026 MonkeDAO. All rights reserved.
           </div>
@@ -718,10 +735,7 @@ function Footer() {
                 key={link}
                 href="#"
                 className="text-xs transition-colors hover:text-[var(--g-light)]"
-                style={{
-                  color: "rgba(134,201,148,0.35)",
-                  fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
-                }}
+                style={{ color: "rgba(134,201,148,0.35)", fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace" }}
               >
                 {link}
               </a>
