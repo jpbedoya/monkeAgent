@@ -30,9 +30,9 @@ function Navbar() {
           <a href="#pricing" className="text-xs font-medium uppercase tracking-widest transition-colors hover:text-[var(--g-light)]" style={{ color: "rgba(134,201,148,0.55)", letterSpacing: "0.04em" }}>
             Pricing
           </a>
-          <a href="#" className="text-xs font-medium uppercase tracking-widest transition-colors hover:text-[var(--g-light)]" style={{ color: "rgba(134,201,148,0.55)", letterSpacing: "0.04em" }}>
-            Docs
-          </a>
+          <Link href="/privacy" className="text-xs font-medium uppercase tracking-widest transition-colors hover:text-[var(--g-light)]" style={{ color: "rgba(134,201,148,0.55)", letterSpacing: "0.04em" }}>
+            Privacy
+          </Link>
         </div>
 
         <Link
@@ -440,8 +440,7 @@ function Features() {
         className="mb-8 text-base"
         style={{ color: "rgba(134,201,148,0.65)", maxWidth: 640, lineHeight: 1.75, marginBottom: "2rem" }}
       >
-        Everything you need to run a personal AI agent — from first deploy to
-        daily operations.
+        Everything you need to run a personal AI agent — from setup to daily use.
       </p>
 
       {/* Grid — equal-height cards via flex + stretch */}
@@ -514,7 +513,7 @@ const plans = [
     period: "/ month",
     features: [
       "3 OpenClaw instances",
-      "Telegram + Discord + Google",
+      "Telegram + Discord + Slack",
       "All supported AI providers",
       "Custom domain",
       "25 GB storage + daily backups",
@@ -801,8 +800,7 @@ function Pricing() {
         className="mb-4 text-base"
         style={{ color: "rgba(134,201,148,0.65)", maxWidth: 640, lineHeight: 1.75 }}
       >
-        Server hosting from $9/mo. Bring your own AI key or let us handle it.
-        No hidden fees.
+        Server hosting from $9/mo. Bring your own AI key or choose a fully managed plan. No hidden fees.
       </p>
 
       {/* Managed footnote */}
@@ -811,7 +809,7 @@ function Pricing() {
         style={{ color: "rgba(134,201,148,0.5)", marginBottom: "3rem" }}
       >
         Don&apos;t have an AI subscription? We offer fully managed plans —{" "}
-        <a href="#" className="underline hover:text-[var(--g-light)]">
+        <a href="mailto:enterprise@monke.is" className="underline hover:text-[var(--g-light)]">
           contact us
         </a>{" "}
         to learn more.
@@ -903,16 +901,20 @@ function Footer() {
             agent.monke.is
           </span>
           <div className="flex gap-6">
-            {["Terms", "Privacy", "Docs"].map((link) => (
-              <a
-                key={link}
-                href="#"
-                className="text-xs transition-colors hover:text-[var(--g-light)]"
-                style={{ color: "rgba(134,201,148,0.35)", fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace" }}
-              >
-                {link}
-              </a>
-            ))}
+            <Link
+              href="/privacy"
+              className="text-xs transition-colors hover:text-[var(--g-light)]"
+              style={{ color: "rgba(134,201,148,0.35)", fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace" }}
+            >
+              Privacy
+            </Link>
+            <a
+              href="mailto:enterprise@monke.is"
+              className="text-xs transition-colors hover:text-[var(--g-light)]"
+              style={{ color: "rgba(134,201,148,0.35)", fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace" }}
+            >
+              Contact
+            </a>
           </div>
         </div>
       </div>
