@@ -526,12 +526,12 @@ const plans = [
 ];
 
 const enterpriseFeatures = [
-  "Unlimited OpenClaw instances",
-  "White-label deployment",
-  "Custom AI model fine-tuning",
-  "SLA up to 99.99% uptime",
-  "Dedicated infrastructure",
-  "Onboarding + ongoing support",
+  "Scale beyond Pro — agents for your team",
+  "White-label under your brand — your domain, your identity",
+  "Custom model configuration per use case",
+  "99.99% uptime SLA with dedicated infrastructure",
+  "Priority infrastructure, isolated per deployment",
+  "Hands-on onboarding and a dedicated point of contact",
 ];
 
 function PricingCard({
@@ -682,7 +682,7 @@ function EnterpriseCard() {
           top: 0,
         }}
       >
-        Custom
+        Enterprise
       </div>
 
       {/* Plan name */}
@@ -714,7 +714,7 @@ function EnterpriseCard() {
           marginBottom: "2rem",
         }}
       >
-        tailored to your needs
+        for teams, DAOs &amp; communities
       </div>
 
       {/* Features */}
@@ -755,7 +755,7 @@ function EnterpriseCard() {
           marginTop: "auto",
         }}
       >
-        Contact Us
+        Talk to the Team
       </a>
     </div>
   );
