@@ -3,13 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --background: #0d1a10;
-  --foreground: #F3EFCD;
+  --g: #4A8F5D;
+  --g-light: #86C994;
+  --g-dark: #184623;
+  --y: #FFC919;
+  --ink: #0A0E0B;
+  --surface: #111714;
+  --surface2: #181E19;
+  --surface3: #1E2620;
+  --border: rgba(74,143,93,0.18);
+  --border-bright: rgba(134,201,148,0.35);
+  --muted: rgba(134,201,148,0.55);
+  --background: #0A0E0B;
+  --foreground: #E8F0E9;
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--ink);
 }
 
 /* Custom scrollbar */
@@ -22,4 +35,50 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #4A8F5D;
   border-radius: 4px;
+}
+
+/* MonkeDAO brand colors as utilities */
+.bg-mk-green { background-color: var(--g); }
+.bg-mk-green-light { background-color: var(--g-light); }
+.bg-mk-green-dark { background-color: var(--g-dark); }
+.bg-mk-yellow { background-color: var(--y); }
+.bg-mk-ink { background-color: var(--ink); }
+.bg-mk-surface { background-color: var(--surface); }
+.bg-mk-surface2 { background-color: var(--surface2); }
+.bg-mk-surface3 { background-color: var(--surface3); }
+
+.text-mk-green { color: var(--g); }
+.text-mk-green-light { color: var(--g-light); }
+.text-mk-yellow { color: var(--y); }
+.text-mk-ivory { color: #E8F0E9; }
+.text-mk-muted { color: var(--muted); }
+
+.border-mk-green { border-color: var(--g); }
+.border-mk-green\/20 { border-color: rgba(74,143,93,0.2); }
+.border-mk-green\/30 { border-color: rgba(74,143,93,0.3); }
+.border-mk-green\/40 { border-color: rgba(74,143,93,0.4); }
+.border-mk-border { border-color: var(--border); }
+.border-mk-border-bright { border-color: var(--border-bright); }
+.border-mk-yellow\/50 { border-color: rgba(255,201,25,0.5); }
+
+.bg-mk-green\/10 { background-color: rgba(74,143,93,0.1); }
+.bg-mk-green\/15 { background-color: rgba(74,143,93,0.15); }
+.bg-mk-green\/20 { background-color: rgba(74,143,93,0.2); }
+.bg-mk-yellow\/5 { background-color: rgba(255,201,25,0.05); }
+.bg-mk-yellow\/20 { background-color: rgba(255,201,25,0.2); }
+.bg-mk-dark-green\/30 { background-color: rgba(24,70,35,0.3); }
+.bg-mk-dark-green\/50 { background-color: rgba(24,70,35,0.5); }
+.bg-mk-dark-green\/60 { background-color: rgba(24,70,35,0.6); }
+.shadow-mk-yellow\/20 { box-shadow: 0 10px 40px rgba(255,201,25,0.2); }
+
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
