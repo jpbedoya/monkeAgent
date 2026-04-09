@@ -103,7 +103,7 @@ function Hero() {
         {/* Sub */}
         <p
           className="mb-9 text-base leading-relaxed"
-          style={{ color: "rgba(134,201,148,0.65)", maxWidth: 460, lineHeight: 1.75 }}
+          style={{ color: "rgba(134,201,148,0.65)", maxWidth: 560, lineHeight: 1.75 }}
         >
           No terminal. No server setup. No DevOps. Your own AI running 24/7 on
           dedicated infrastructure — built by MonkeDAO on OpenClaw.
@@ -325,8 +325,8 @@ function Features() {
 
       {/* Sub — increased contrast */}
       <p
-        className="mb-12 text-base"
-        style={{ color: "rgba(134,201,148,0.65)", maxWidth: 520, lineHeight: 1.75, marginBottom: "3rem" }}
+        className="mb-8 text-base"
+        style={{ color: "rgba(134,201,148,0.65)", maxWidth: 640, lineHeight: 1.75, marginBottom: "2rem" }}
       >
         Everything you need to run a personal AI agent — from first deploy to
         daily operations.
@@ -687,7 +687,7 @@ function Pricing() {
       {/* Sub */}
       <p
         className="mb-4 text-base"
-        style={{ color: "rgba(134,201,148,0.65)", maxWidth: 520, lineHeight: 1.75 }}
+        style={{ color: "rgba(134,201,148,0.65)", maxWidth: 640, lineHeight: 1.75 }}
       >
         Server hosting from $9/mo. Bring your own AI key or let us handle it.
         No hidden fees.
