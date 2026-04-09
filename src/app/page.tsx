@@ -794,9 +794,9 @@ function Pricing() {
       {/* Sub */}
       <p
         className="mb-4 text-base"
-        style={{ color: "rgba(134,201,148,0.65)", maxWidth: 640, lineHeight: 1.75 }}
+        style={{ color: "rgba(134,201,148,0.65)", lineHeight: 1.75 }}
       >
-        Server hosting from $9/mo. Bring your own AI key or choose a fully managed plan. No hidden fees.
+        Server hosting from $9/mo. Bring your own AI key, or choose a fully managed plan. No hidden fees.
       </p>
 
       {/* Managed footnote */}
