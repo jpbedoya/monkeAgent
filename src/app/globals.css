@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 :root {
+  --font-syne: 'Syne', sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
   --g: #4A8F5D;
   --g-light: #86C994;
   --g-dark: #184623;

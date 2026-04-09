@@ -19,7 +19,8 @@ const config: Config = {
         "mk-light-blue": "#90C6EA",
       },
       fontFamily: {
-        sans: ["var(--font-space-grotesk)", "sans-serif"],
+        sans: ["Syne", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
     },
   },
