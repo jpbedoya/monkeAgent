@@ -37,15 +37,15 @@ function Hero() {
 
       <div className="relative z-10 mx-auto max-w-3xl text-center">
         <div className="mb-6 inline-block rounded-full border border-mk-green/30 bg-mk-green/10 px-4 py-1.5 text-sm text-mk-light-green">
-          🐵 Powered by MonkeDAO · Built on OpenClaw
+          🐵 Powered by MonkeDAO & OpenClaw
         </div>
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-mk-ivory sm:text-6xl">
           Your personal AI assistant,{" "}
           <span className="text-mk-yellow">ready in minutes</span>
         </h1>
         <p className="mb-10 text-lg text-mk-ivory/60 sm:text-xl">
-          Your own AI agent, deployed in minutes. Powered by OpenClaw. No
-          terminal needed, full control, your own server.
+          Your own AI agent, deployed in minutes. No terminal, no server
+          setup — just your personal AI running 24/7, powered by OpenClaw.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
@@ -77,13 +77,13 @@ const features = [
     icon: "🔒",
     title: "Your Own Server",
     description:
-      "Each instance runs on dedicated infrastructure. Your data stays yours, always.",
+      "Each agent runs on its own dedicated server. Your data stays yours — always.",
   },
   {
     icon: "⚡",
     title: "Full Control",
     description:
-      "Connect your preferred AI provider, Telegram bot, and integrations. Configure everything from the dashboard.",
+      "Bring your own AI key or let us set it up for you. Connect Telegram, Discord, and more — all from a simple dashboard.",
   },
   {
     icon: "🌍",
@@ -95,7 +95,7 @@ const features = [
     icon: "🤖",
     title: "Multi-AI Support",
     description:
-      "Choose Claude, GPT-4, or Gemini as your AI backbone. Switch anytime from your dashboard.",
+      "Choose ChatGPT, Gemini, or other supported providers as your AI backbone. Switch anytime from your dashboard.",
   },
   {
     icon: "🐵",
@@ -147,7 +147,7 @@ const plans = [
     features: [
       "1 OpenClaw instance",
       "Telegram integration",
-      "1 AI provider",
+      "1 AI provider (BYOK — bring your own key)",
       "Community support",
       "5GB storage",
       "99.5% uptime SLA",
@@ -162,7 +162,7 @@ const plans = [
     features: [
       "3 OpenClaw instances",
       "Telegram + Discord + Google",
-      "All AI providers",
+      "All supported AI providers (ChatGPT, Gemini, Minimax & more)",
       "Priority support",
       "25GB storage",
       "99.9% uptime SLA",
@@ -183,7 +183,10 @@ function Pricing() {
             Simple, transparent pricing
           </h2>
           <p className="text-lg text-mk-ivory/50">
-            Start free, scale when you need to. No hidden fees.
+            Server hosting from $9/mo. AI subscriptions handled if you want them. No hidden fees.
+          </p>
+          <p className="mt-4 text-center text-sm italic text-mk-ivory/40">
+            Don&apos;t have an AI subscription? We offer fully managed plans — contact us to learn more.
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2">
@@ -249,8 +252,7 @@ function Footer() {
         <div className="flex items-center gap-2 text-sm text-mk-ivory/50">
           <span className="text-lg">🐵</span>
           <span>
-            Monke<span className="text-mk-yellow">Agent</span> &copy; 2026
-            MonkeDAO
+            Monke<span className="text-mk-yellow">Agent</span> &copy; 2026 MonkeDAO. All rights reserved.
           </span>
         </div>
         <div className="flex gap-6 text-sm text-mk-ivory/40">
