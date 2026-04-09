@@ -137,27 +137,6 @@ function Hero() {
             See how it works
           </a>
         </div>
-
-        {/* Stats row */}
-        <div
-          className="flex gap-6 pt-5"
-          style={{ borderTop: "0.5px solid rgba(74,143,93,0.18)" }}
-        >
-          {[
-            { num: "3K+", label: "Community Members" },
-            { num: "99.9%", label: "SLA-backed Uptime" },
-            { num: "<5min", label: "Deploy Time" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-xl font-extrabold" style={{ color: "#F0F7F1", letterSpacing: "-0.03em", lineHeight: 1, marginBottom: 3 }}>
-                {stat.num}
-              </div>
-              <div className="text-xs uppercase" style={{ color: "rgba(134,201,148,0.4)", letterSpacing: "0.08em", fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace" }}>
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
 
       {/* Right: Telegram phone mockup */}
@@ -315,6 +294,56 @@ function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+/* ─────────────────────────────────────────
+   PROOF BAR
+   ───────────────────────────────────────── */
+function ProofBar() {
+  return (
+    <div
+      style={{
+        borderTop: "0.5px solid rgba(74,143,93,0.18)",
+        borderBottom: "0.5px solid rgba(74,143,93,0.18)",
+        background: "rgba(15,21,16,0.7)",
+      }}
+    >
+      <div
+        className="mx-auto flex items-center justify-center px-8 py-7"
+        style={{ maxWidth: 1200, gap: "4rem" }}
+      >
+        {[
+          { num: "3K+", label: "Community Members" },
+          { num: "99.9%", label: "SLA-backed Uptime" },
+          { num: "<5min", label: "Deploy Time" },
+        ].map((stat, i, arr) => (
+          <>
+            <div key={stat.label} className="flex flex-col items-center">
+              <div
+                className="font-extrabold"
+                style={{ fontSize: "1.75rem", color: "#F0F7F1", letterSpacing: "-0.03em", lineHeight: 1, marginBottom: 4 }}
+              >
+                {stat.num}
+              </div>
+              <div
+                className="text-xs uppercase"
+                style={{
+                  color: "rgba(134,201,148,0.45)",
+                  letterSpacing: "0.08em",
+                  fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+                }}
+              >
+                {stat.label}
+              </div>
+            </div>
+            {i < arr.length - 1 && (
+              <div key={`div-${i}`} style={{ width: 0.5, height: 32, background: "rgba(74,143,93,0.2)" }} />
+            )}
+          </>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -899,6 +928,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <ProofBar />
       <Divider />
       <Features />
       <Divider />
