@@ -52,11 +52,11 @@ function Navbar() {
    ───────────────────────────────────────── */
 function Hero() {
   return (
-    <section
-      className="grid min-h-screen items-center px-8 pt-24"
+    <section className="w-full">
+    <div
+      className="mx-auto grid items-center px-8"
       style={{
         maxWidth: 1200,
-        margin: "0 auto",
         gridTemplateColumns: "1fr 1fr",
         gap: "5rem",
         paddingTop: "7rem",
@@ -293,6 +293,7 @@ function Hero() {
           </div>
         </div>
       </div>
+    </div>
     </section>
   );
 }
@@ -311,7 +312,7 @@ function ProofBar() {
     >
       <div
         className="mx-auto flex items-center justify-center px-8 py-7"
-        style={{ maxWidth: 1200, gap: "4rem" }}
+        style={{ maxWidth: 1200, margin: "0 auto", gap: "4rem" }}
       >
         {[
           { num: "3K+", label: "Community Members" },
@@ -403,11 +404,8 @@ const features = [
 
 function Features() {
   return (
-    <section
-      id="features"
-      className="px-8 py-24"
-      style={{ maxWidth: 1200, margin: "0 auto" }}
-    >
+    <section id="features" className="w-full py-24">
+    <div className="mx-auto px-8" style={{ maxWidth: 1200 }}>
       {/* Section label */}
       <div
         className="mb-3 text-xs font-medium uppercase"
@@ -484,6 +482,7 @@ function Features() {
           </div>
         ))}
       </div>
+    </div>
     </section>
   );
 }
@@ -763,11 +762,8 @@ function EnterpriseCard() {
 
 function Pricing() {
   return (
-    <section
-      id="pricing"
-      className="px-8 py-24"
-      style={{ maxWidth: 1200, margin: "0 auto" }}
-    >
+    <section id="pricing" className="w-full py-24">
+    <div className="mx-auto px-8" style={{ maxWidth: 1200 }}>
       {/* Section label */}
       <div
         className="mb-3 text-xs font-medium uppercase"
@@ -850,6 +846,7 @@ function Pricing() {
           <EnterpriseCard />
         </div>
       </div>
+    </div>
     </section>
   );
 }
@@ -859,10 +856,8 @@ function Pricing() {
    ───────────────────────────────────────── */
 function Footer() {
   return (
-    <footer
-      className="px-8 py-10"
-      style={{ borderTop: "0.5px solid rgba(74,143,93,0.18)", maxWidth: 1200, margin: "0 auto" }}
-    >
+    <footer className="w-full" style={{ borderTop: "0.5px solid rgba(74,143,93,0.18)" }}>
+    <div className="mx-auto px-8 py-10" style={{ maxWidth: 1200 }}>
       <div className="flex items-center justify-between">
         {/* Left */}
         <div>
@@ -918,6 +913,7 @@ function Footer() {
           </div>
         </div>
       </div>
+    </div>
     </footer>
   );
 }
