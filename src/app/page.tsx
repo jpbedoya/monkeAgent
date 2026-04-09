@@ -11,7 +11,7 @@ function Navbar() {
       style={{ borderBottom: "0.5px solid rgba(74,143,93,0.18)" }}
     >
       <div
-        className="mx-auto flex items-center justify-between px-8 py-4"
+        className="mx-auto flex items-center justify-between px-4 md:px-8 py-4"
         style={{ maxWidth: 1200 }}
       >
         <Link href="/" className="flex items-center gap-2.5 font-bold text-lg tracking-tight" style={{ color: "#E8F0E9" }}>
@@ -55,13 +55,9 @@ function Hero() {
   return (
     <section className="w-full">
     <div
-      className="mx-auto grid items-center px-8"
+      className="mx-auto grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-8 gap-10 md:gap-20 pt-28 pb-16 md:pb-20"
       style={{
         maxWidth: 1200,
-        gridTemplateColumns: "1fr 1fr",
-        gap: "5rem",
-        paddingTop: "7rem",
-        paddingBottom: "5rem",
       }}
     >
       {/* Left: copy */}
@@ -122,7 +118,7 @@ function Hero() {
         </div>
 
         {/* CTA buttons */}
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           <Link
             href="/signup"
             className="rounded-lg px-7 py-3.5 text-sm font-bold transition hover:translate-y-[-1px]"
@@ -144,12 +140,13 @@ function Hero() {
       <div className="flex justify-center">
         {/* Phone frame */}
         <div
+          className="w-[230px] md:w-[260px]"
           style={{
-            width: 260,
             background: "#0F1510",
             border: "1.5px solid rgba(74,143,93,0.3)",
             borderRadius: 36,
             overflow: "hidden",
+            maxWidth: "100%",
           }}
         >
           {/* Notch */}
@@ -312,8 +309,8 @@ function ProofBar() {
       }}
     >
       <div
-        className="mx-auto flex items-center justify-center px-8 py-7"
-        style={{ maxWidth: 1200, margin: "0 auto", gap: "4rem" }}
+        className="mx-auto flex flex-wrap items-center justify-center px-4 md:px-8 py-7 gap-6 md:gap-16"
+        style={{ maxWidth: 1200, margin: "0 auto" }}
       >
         {[
           { num: "3K+", label: "Community Members" },
@@ -340,7 +337,7 @@ function ProofBar() {
               </div>
             </div>
             {i < arr.length - 1 && (
-              <div key={`div-${i}`} style={{ width: 0.5, height: 32, background: "rgba(74,143,93,0.2)" }} />
+              <div key={`div-${i}`} className="hidden md:block" style={{ width: 0.5, height: 32, background: "rgba(74,143,93,0.2)" }} />
             )}
           </>
         ))}
@@ -406,7 +403,7 @@ const features = [
 function Features() {
   return (
     <section id="features" className="w-full py-24">
-    <div className="mx-auto px-8" style={{ maxWidth: 1200 }}>
+    <div className="mx-auto px-4 md:px-8" style={{ maxWidth: 1200 }}>
       {/* Section label */}
       <div
         className="mb-3 text-xs font-medium uppercase"
@@ -444,9 +441,8 @@ function Features() {
 
       {/* Grid — equal-height cards via flex + stretch */}
       <div
-        className="grid overflow-hidden rounded-2xl"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 overflow-hidden rounded-2xl"
         style={{
-          gridTemplateColumns: "repeat(3, 1fr)",
           gap: 1,
           background: "rgba(74,143,93,0.18)",
           border: "0.5px solid rgba(74,143,93,0.18)",
@@ -456,7 +452,7 @@ function Features() {
         {features.map((f) => (
           <div
             key={f.title}
-            className="flex flex-col p-8 transition-colors hover:bg-[#181E19]"
+            className="flex flex-col p-6 md:p-8 transition-colors hover:bg-[#181E19]"
             style={{ background: "var(--surface)" }}
           >
             {/* Icon box — fixed size, top-aligned */}
@@ -555,7 +551,7 @@ function PricingCard({
 }) {
   return (
     <div
-      className="flex flex-col rounded-2xl p-8"
+      className="flex flex-col rounded-2xl p-6 md:p-8"
       style={{
         background: highlighted ? "var(--surface2)" : "var(--surface)",
         border: highlighted
@@ -662,7 +658,7 @@ function PricingCard({
 function EnterpriseCard() {
   return (
     <div
-      className="flex flex-col rounded-2xl p-8"
+      className="flex flex-col rounded-2xl p-6 md:p-8"
       style={{
         background: "var(--surface)",
         border: "0.5px solid rgba(74,143,93,0.18)",
@@ -764,7 +760,7 @@ function EnterpriseCard() {
 function Pricing() {
   return (
     <section id="pricing" className="w-full py-24">
-    <div className="mx-auto px-8" style={{ maxWidth: 1200 }}>
+    <div className="mx-auto px-4 md:px-8" style={{ maxWidth: 1200 }}>
       {/* Section label */}
       <div
         className="mb-3 text-xs font-medium uppercase"
@@ -814,9 +810,8 @@ function Pricing() {
 
       {/* Cards grid — all cards stretch to equal height */}
       <div
-        className="grid gap-6"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-6"
         style={{
-          gridTemplateColumns: "repeat(3, 1fr)",
           maxWidth: 1080,
           alignItems: "stretch",
         }}
@@ -858,8 +853,8 @@ function Pricing() {
 function Footer() {
   return (
     <footer className="w-full" style={{ borderTop: "0.5px solid rgba(74,143,93,0.18)" }}>
-    <div className="mx-auto px-8 py-10" style={{ maxWidth: 1200 }}>
-      <div className="flex items-center justify-between">
+    <div className="mx-auto px-4 md:px-8 py-10" style={{ maxWidth: 1200 }}>
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         {/* Left */}
         <div>
           <div
@@ -883,7 +878,7 @@ function Footer() {
         </div>
 
         {/* Right */}
-        <div className="flex flex-col items-end gap-3">
+        <div className="flex flex-col items-start md:items-end gap-3">
           <span
             className="rounded px-3 py-1 text-xs"
             style={{
