@@ -363,7 +363,7 @@ function StepLaunch() {
           Your monkeAgent is live! 🎉
         </h2>
         <p className="mb-2 text-mk-ivory/50">
-          Your AI agent is deployed and running. Powered by OpenClaw..
+          Your AI agent is deployed and running. Powered by OpenClaw.
         </p>
         <div className="my-6 rounded-xl border border-mk-light-green/30 bg-mk-light-green/10 p-4">
           <p className="text-sm text-mk-ivory/50">Your server URL</p>

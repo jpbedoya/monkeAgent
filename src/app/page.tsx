@@ -44,7 +44,7 @@ function Hero() {
           <span className="text-mk-yellow">ready in minutes</span>
         </h1>
         <p className="mb-10 text-lg text-mk-ivory/60 sm:text-xl">
-          Your own AI agent, deployed in minutes. Powered by OpenClaw.. No
+          Your own AI agent, deployed in minutes. Powered by OpenClaw. No
           terminal needed, full control, your own server.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
