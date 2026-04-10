@@ -198,7 +198,10 @@ function Hero() {
               flexDirection: "column",
               gap: 8,
               background: "#0F1510",
-              minHeight: 320,
+              height: 280,
+              overflowY: "auto",
+              overflowX: "hidden",
+              position: "relative",
             }}
           >
             {/* Date divider */}
