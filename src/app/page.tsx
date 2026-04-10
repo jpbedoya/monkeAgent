@@ -14,12 +14,12 @@ function Navbar() {
         style={{ maxWidth: 1200 }}
       >
         <Link href="/" className="flex items-center gap-2.5 font-bold text-lg tracking-tight" style={{ color: "#E8F0E9" }}>
-          <span
-            className="flex h-8 w-8 items-center justify-center rounded-lg border text-lg"
-            style={{ background: "var(--g-dark)", border: "1px solid var(--g)", fontSize: 16 }}
+          <div
+            className="flex h-8 w-8 items-center justify-center rounded-lg border"
+            style={{ background: "var(--g-dark)", border: "1px solid var(--g)", padding: 4 }}
           >
-            🐵
-          </span>
+            <img src="/monke-logo.svg" alt="MonkeDAO" style={{ width: "100%", height: "100%", filter: "invert(1)" }} />
+          </div>
           MonkeAgent
         </Link>
 
@@ -182,7 +182,7 @@ function Hero() {
                 display: "flex", alignItems: "center", justifyContent: "center",
                 fontSize: 14, flexShrink: 0,
               }}
-            >🐵</div>
+            ><img src="/monke-logo.svg" alt="MonkeDAO" style={{ width: 20, height: 20, filter: "invert(1)" }} /></div>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: "#E8F2EA", letterSpacing: "-0.01em" }}>My Operator</div>
               <div style={{ fontSize: 9, color: "var(--g-light)", fontFamily: "var(--font-jetbrains), monospace" }}>online</div>
@@ -864,12 +864,12 @@ function Footer() {
             className="mb-2 flex items-center gap-2.5 font-bold text-lg"
             style={{ color: "#E8F0E9", letterSpacing: "-0.02em" }}
           >
-            <span
-              className="flex h-8 w-8 items-center justify-center rounded-lg border text-lg"
-              style={{ background: "var(--g-dark)", border: "1px solid var(--g)", fontSize: 16 }}
+            <div
+              className="flex h-8 w-8 items-center justify-center rounded-lg border"
+              style={{ background: "var(--g-dark)", border: "1px solid var(--g)", padding: 4 }}
             >
-              🐵
-            </span>
+              <img src="/monke-logo.svg" alt="MonkeDAO" style={{ width: "100%", height: "100%", filter: "invert(1)" }} />
+            </div>
             MonkeAgent
           </div>
           <div
