@@ -139,13 +139,14 @@ function Hero() {
       <div className="flex justify-center">
         {/* Phone frame */}
         <div
-          className="w-[230px] md:w-[260px]"
+          className="w-[195px] md:w-[220px]"
           style={{
             background: "#0F1510",
             border: "1.5px solid rgba(74,143,93,0.3)",
-            borderRadius: 36,
+            borderRadius: 28,
             overflow: "hidden",
             maxWidth: "100%",
+            maxHeight: "424px",
           }}
         >
           {/* Notch */}
@@ -197,7 +198,7 @@ function Hero() {
               flexDirection: "column",
               gap: 8,
               background: "#0F1510",
-              minHeight: 340,
+              height: 280,
             }}
           >
             {/* Date divider */}
