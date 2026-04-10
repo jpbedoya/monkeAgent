@@ -69,7 +69,7 @@ function Hero() {
             border: "0.5px solid var(--g)",
             color: "var(--g-light)",
             letterSpacing: "0.1em",
-            fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+            fontFamily: "'Inter', sans-serif",
             alignSelf: "flex-start",
           }}
         >
@@ -107,7 +107,7 @@ function Hero() {
                 background: "rgba(24,70,35,0.3)",
                 border: "0.5px solid rgba(74,143,93,0.15)",
                 color: "rgba(134,201,148,0.85)",
-                fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+                fontFamily: "'Inter', sans-serif",
               }}
             >
               <span className="h-1 w-1 rounded-full" style={{ background: "var(--g-light)" }} />
@@ -333,7 +333,7 @@ function ProofBar() {
                 style={{
                   color: "rgba(134,201,148,0.45)",
                   letterSpacing: "0.08em",
-                  fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+                  fontFamily: "'Inter', sans-serif",
                 }}
               >
                 {stat.label}
@@ -413,7 +413,7 @@ function Features() {
         style={{
           color: "var(--g)",
           letterSpacing: "0.1em",
-          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+          fontFamily: "'Inter', sans-serif",
         }}
       >
         What&apos;s included
@@ -709,7 +709,7 @@ function EnterpriseCard() {
         className="mb-8 text-xs"
         style={{
           color: "rgba(134,201,148,0.4)",
-          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+          fontFamily: "'Inter', sans-serif",
           marginBottom: "2rem",
         }}
       >
@@ -770,7 +770,7 @@ function Pricing() {
         style={{
           color: "var(--g)",
           letterSpacing: "0.1em",
-          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+          fontFamily: "'Inter', sans-serif",
         }}
       >
         Pricing
@@ -874,7 +874,7 @@ function Footer() {
           </div>
           <div
             className="text-xs"
-            style={{ color: "rgba(134,201,148,0.35)", fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace" }}
+            style={{ color: "rgba(134,201,148,0.35)", fontFamily: "'Inter', sans-serif" }}
           >
             © 2026 MonkeDAO. All rights reserved.
           </div>
@@ -888,7 +888,7 @@ function Footer() {
               background: "rgba(24,70,35,0.3)",
               border: "0.5px solid rgba(74,143,93,0.18)",
               color: "rgba(134,201,148,0.4)",
-              fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               letterSpacing: "0.04em",
             }}
           >
@@ -898,14 +898,14 @@ function Footer() {
             <Link
               href="/privacy"
               className="text-xs transition-colors hover:text-[var(--g-light)]"
-              style={{ color: "rgba(134,201,148,0.35)", fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace" }}
+              style={{ color: "rgba(134,201,148,0.35)", fontFamily: "'Inter', sans-serif" }}
             >
               Privacy
             </Link>
             <a
               href="mailto:hello@monke.is"
               className="text-xs transition-colors hover:text-[var(--g-light)]"
-              style={{ color: "rgba(134,201,148,0.35)", fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace" }}
+              style={{ color: "rgba(134,201,148,0.35)", fontFamily: "'Inter', sans-serif" }}
             >
               Contact
             </a>
