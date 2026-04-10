@@ -82,10 +82,10 @@ function Hero() {
           className="font-extrabold leading-tight tracking-tight"
           style={{ fontSize: "clamp(2.6rem, 5vw, 4rem)", letterSpacing: "-0.035em", lineHeight: 1.05, color: "#F0F7F1" }}
         >
-          Your agent.
+          Your personal AI
           <br />
-          Already{" "}
-          <em style={{ fontStyle: "normal", color: "var(--g-light)" }}>at work.</em>
+          assistant.{" "}
+          <em style={{ fontStyle: "normal", color: "var(--g-light)" }}>Deployed.</em>
         </h1>
 
         {/* Sub */}
@@ -106,7 +106,7 @@ function Hero() {
               style={{
                 background: "rgba(24,70,35,0.3)",
                 border: "0.5px solid rgba(74,143,93,0.15)",
-                color: "rgba(134,201,148,0.5)",
+                color: "rgba(134,201,148,0.85)",
                 fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
               }}
             >
@@ -127,7 +127,7 @@ function Hero() {
           </Link>
           <a
             href="#features"
-            className="rounded-lg border px-6 py-3.5 text-sm font-medium transition"
+            className="rounded-lg border px-7 py-3.5 text-sm font-bold transition hover:translate-y-[-1px]"
             style={{ border: "0.5px solid rgba(134,201,148,0.35)", color: "rgba(134,201,148,0.65)" }}
           >
             See how it works
@@ -146,7 +146,7 @@ function Hero() {
             borderRadius: 28,
             overflow: "hidden",
             maxWidth: "100%",
-            maxHeight: "424px",
+
           }}
         >
           {/* Notch */}
@@ -198,7 +198,7 @@ function Hero() {
               flexDirection: "column",
               gap: 8,
               background: "#0F1510",
-              height: 280,
+              minHeight: 320,
             }}
           >
             {/* Date divider */}

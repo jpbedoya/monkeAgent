@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { background: #0A0E0B; padding: 40px; margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .logo-box { 
+            background: #111714; 
+            border: 1px solid rgba(74,143,93,0.18); 
+            border-radius: 16px; 
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h3 { color: #86C994; margin-top: 20px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-grid">
+            <!-- 1. Abstract Monke -->
+            <div class="logo-box">
+                <svg width="120" height="120" viewBox="0 0 80 80" fill="none">
+                    <circle cx="40" cy="40" r="28" fill="#184623"/>
+                    <circle cx="40" cy="40" r="25" fill="#4A8F5D"/>
+                    <circle cx="22" cy="38" r="10" fill="#4A8F5D"/>
+                    <circle cx="58" cy="38" r="10" fill="#4A8F5D"/>
+                    <circle cx="22" cy="38" r="7" fill="#184623"/>
+                    <circle cx="58" cy="38" r="7" fill="#184623"/>
+                    <ellipse cx="40" cy="46" rx="18" ry="16" fill="#86C994"/>
+                    <circle cx="32" cy="36" r="3" fill="#0A0E0B"/>
+                    <circle cx="48" cy="36" r="3" fill="#0A0E0B"/>
+                    <path d="M35 48 Q40 52 45 48" stroke="#184623" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <circle cx="40" cy="46" r="2" fill="#184623"/>
+                </svg>
+                <h3>1. Abstract Monke</h3>
+            </div>
+            
+            <!-- 2. Circuit Brain -->
+            <div class="logo-box">
+                <svg width="120" height="120" viewBox="0 0 80 80" fill="none">
+                    <path d="M40 10 C55 10 65 20 65 35 C65 55 55 70 40 70 C25 70 15 55 15 35 C15 20 25 10 40 10" fill="#184623"/>
+                    <circle cx="25" cy="35" r="8" fill="#184623"/>
+                    <circle cx="55" cy="35" r="8" fill="#184623"/>
+                    <g stroke="#4A8F5D" stroke-width="1" fill="none">
+                        <path d="M30 30 L35 30 L35 35 L45 35 L45 30 L50 30"/>
+                        <path d="M40 25 L40 30 M40 35 L40 40 M40 45 L40 50"/>
+                        <path d="M25 40 L30 40 L30 45 L50 45 L50 40 L55 40"/>
+                        <circle cx="30" cy="30" r="2" fill="#86C994" stroke="none"/>
+                        <circle cx="50" cy="30" r="2" fill="#86C994" stroke="none"/>
+                        <circle cx="40" cy="35" r="3" fill="#86C994" stroke="none"/>
+                        <circle cx="30" cy="45" r="2" fill="#86C994" stroke="none"/>
+                        <circle cx="50" cy="45" r="2" fill="#86C994" stroke="none"/>
+                    </g>
+                    <circle cx="33" cy="35" r="3" fill="#86C994"/>
+                    <circle cx="47" cy="35" r="3" fill="#86C994"/>
+                </svg>
+                <h3>2. Circuit Brain</h3>
+            </div>
+            
+            <!-- 3. Terminal Prompt -->
+            <div class="logo-box">
+                <svg width="120" height="120" viewBox="0 0 80 80" fill="none">
+                    <text x="15" y="45" font-family="monospace" font-size="28" fill="#4A8F5D" font-weight="bold">&gt;_</text>
+                    <path d="M45 40 Q55 35 58 45 Q60 55 55 58 Q50 60 48 55" 
+                          stroke="#86C994" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <rect x="45" y="32" width="3" height="18" fill="#86C994" opacity="0.8"/>
+                </svg>
+                <h3>3. Terminal Prompt</h3>
+            </div>
+            
+            <!-- 4. M + Agent -->
+            <div class="logo-box">
+                <svg width="120" height="120" viewBox="0 0 80 80" fill="none">
+                    <path d="M15 60 L15 30 Q15 20 25 20 Q30 20 35 25 L40 30 L45 25 Q50 20 55 20 Q65 20 65 30 L65 60" 
+                          stroke="#4A8F5D" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="28" cy="35" r="3" fill="#86C994"/>
+                    <circle cx="52" cy="35" r="3" fill="#86C994"/>
+                    <circle cx="70" cy="25" r="4" fill="#86C994"/>
+                    <circle cx="70" cy="25" r="2" fill="#184623"/>
+                    <path d="M66 25 L62 25 M74 25 L78 25 M70 21 L70 17 M70 29 L70 33" 
+                          stroke="#4A8F5D" stroke-width="1" stroke-linecap="round"/>
+                </svg>
+                <h3>4. M + Agent Symbol</h3>
+            </div>
+            
+            <!-- 5. Hexagon Badge -->
+            <div class="logo-box">
+                <svg width="120" height="120" viewBox="0 0 80 80" fill="none">
+                    <path d="M40 10 L60 22 L60 48 L40 60 L20 48 L20 22 Z" 
+                          fill="#184623" stroke="#4A8F5D" stroke-width="2"/>
+                    <ellipse cx="40" cy="38" r="15" ry="18" fill="#4A8F5D"/>
+                    <circle cx="30" cy="35" r="6" fill="#4A8F5D"/>
+                    <circle cx="50" cy="35" r="6" fill="#4A8F5D"/>
+                    <circle cx="35" cy="35" r="2.5" fill="#86C994"/>
+                    <circle cx="45" cy="35" r="2.5" fill="#86C994"/>
+                </svg>
+                <h3>5. Hexagon Badge</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
