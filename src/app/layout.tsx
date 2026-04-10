@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "MonkeAgent",
     images: [
       {
-        url: "https://agent.monke.is/og-v2.png",
+        url: "https://agent.monke.is/og-image.png",
         width: 1200,
         height: 630,
         alt: "MonkeAgent - Your Personal AI Assistant",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MonkeAgent — Your Personal AI Assistant",
     description: "Deploy your own AI agent in minutes. No coding required.",
-    images: ["https://agent.monke.is/og-v2.png"],
+    images: ["https://agent.monke.is/og-image.png"],
   },
   icons: {
     icon: "/m-agent-logo-white.svg",
