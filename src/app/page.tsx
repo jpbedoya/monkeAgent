@@ -571,7 +571,7 @@ function PricingCard({
             background: "var(--g)",
             color: "#0A0E0B",
             letterSpacing: "0.08em",
-            fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+            fontFamily: "'Inter', sans-serif",
             position: "absolute",
             top: 0,
           }}
@@ -586,7 +586,7 @@ function PricingCard({
         style={{
           color: "rgba(134,201,148,0.55)",
           letterSpacing: "0.08em",
-          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+          fontFamily: "'Inter', sans-serif",
         }}
       >
         {name}
@@ -605,7 +605,7 @@ function PricingCard({
         className="mb-8 text-xs"
         style={{
           color: "rgba(134,201,148,0.4)",
-          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+          fontFamily: "'Inter', sans-serif",
           marginBottom: "2rem",
         }}
       >
@@ -676,7 +676,7 @@ function EnterpriseCard() {
           color: "var(--g-light)",
           border: "0.5px solid rgba(74,143,93,0.35)",
           letterSpacing: "0.08em",
-          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+          fontFamily: "'Inter', sans-serif",
           position: "absolute",
           top: 0,
         }}
@@ -690,7 +690,7 @@ function EnterpriseCard() {
         style={{
           color: "rgba(134,201,148,0.55)",
           letterSpacing: "0.08em",
-          fontFamily: "var(--font-jetbrains), 'JetBrains Mono', monospace",
+          fontFamily: "'Inter', sans-serif",
         }}
       >
         Enterprise
