@@ -1,17 +1,17 @@
-<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Stylized M that forms subtle face -->
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stylized M -->
   <path d="M15 60 L15 30 Q15 20 25 20 Q30 20 35 25 L40 30 L45 25 Q50 20 55 20 Q65 20 65 30 L65 60" 
         stroke="#E8F0E9" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   
-  <!-- Hidden eyes in the M -->
+  <!-- Eyes -->
   <circle cx="28" cy="35" r="3" fill="#E8F0E9"/>
   <circle cx="52" cy="35" r="3" fill="#E8F0E9"/>
   
-  <!-- Neural/agent indicator -->
+  <!-- Neural node -->
   <circle cx="70" cy="25" r="4" fill="#E8F0E9"/>
   <circle cx="70" cy="25" r="2" fill="#0A0E0B"/>
   
-  <!-- Connection lines suggesting network -->
+  <!-- Connection lines -->
   <path d="M66 25 L62 25 M74 25 L78 25 M70 21 L70 17 M70 29 L70 33" 
-        stroke="#E8F0E9" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+        stroke="#E8F0E9" stroke-width="1" stroke-linecap="round"/>
 </svg>
