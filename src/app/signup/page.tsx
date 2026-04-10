@@ -634,7 +634,7 @@ export default function SignupPage() {
           >
             <img src="/m-agent-logo-white.svg" alt="MonkeAgent" style={{ width: 20, height: 20 }} />
           </span>
-          Monke<span style={{ color: "var(--y)" }}>Agent</span>
+          MonkeAgent
         </Link>
       </div>
 
