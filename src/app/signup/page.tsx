@@ -468,7 +468,7 @@ function StepLaunch() {
         animate={{ opacity: 1, scale: 1 }}
         className="mx-auto max-w-md text-center"
       >
-        <div className="mb-6 text-6xl">🐵</div>
+        <div className="mb-6 flex justify-center"><img src="/m-agent-logo-white.svg" alt="MonkeAgent" style={{width:80,height:80}} /></div>
         <h2
           className="mb-3 text-3xl font-bold"
           style={{ color: "#E8F0E9" }}
@@ -512,9 +512,10 @@ function StepLaunch() {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-          className="mb-6 inline-block text-5xl"
+          className="mb-6 inline-block"
+          style={{ width: 64, height: 64 }}
         >
-          🐵
+          <img src="/m-agent-logo-white.svg" alt="MonkeAgent" style={{ width: 64, height: 64 }} />
         </motion.div>
         <h2
           className="mb-3 text-2xl font-bold"
@@ -631,7 +632,7 @@ export default function SignupPage() {
               border: "1px solid var(--g)",
             }}
           >
-            🐵
+            <img src="/m-agent-logo-white.svg" alt="MonkeAgent" style={{ width: 20, height: 20 }} />
           </span>
           Monke<span style={{ color: "var(--y)" }}>Agent</span>
         </Link>

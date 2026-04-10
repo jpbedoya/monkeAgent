@@ -18,7 +18,7 @@ function DashboardNav() {
     <nav className="border-b border-mk-green/20 bg-[#0d1a10]/90 backdrop-blur-md">
       <div className="flex items-center justify-between px-6 py-3">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold">
-          <span className="text-xl">🐵</span>
+          <img src="/m-agent-logo-white.svg" alt="MonkeAgent" style={{width:24,height:24}} />
           <span className="text-mk-ivory">
             monke<span className="text-mk-yellow">Agent</span>
           </span>

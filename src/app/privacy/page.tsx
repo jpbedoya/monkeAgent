@@ -119,7 +119,7 @@ export default function PrivacyPage() {
               className="flex h-8 w-8 items-center justify-center rounded-lg"
               style={{ background: "var(--g-dark)", border: "1px solid var(--g)", fontSize: 16 }}
             >
-              🐵
+              <img src="/m-agent-logo-white.svg" alt="MonkeAgent" style={{ width: "100%", height: "100%" }} />
             </span>
             MonkeAgent
           </Link>
