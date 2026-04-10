@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     images: ["https://agent.monke.is/og-image.png"],
   },
   icons: {
-    icon: "/m-agent-logo.svg",
-    apple: "/m-agent-logo.svg",
+    icon: "/m-agent-logo-white.svg",
+    apple: "/m-agent-logo-white.svg",
   },
 };
 
