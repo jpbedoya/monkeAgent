@@ -9,14 +9,7 @@ export const metadata: Metadata = {
     description: "Deploy your own AI agent in minutes. No coding required.",
     url: "https://agent.monke.is",
     siteName: "MonkeAgent",
-    images: [
-      {
-        url: "https://agent.monke.is/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "MonkeAgent - AI Assistant Platform",
-      },
-    ],
+    images: [],
     locale: "en_US",
     type: "website",
   },
@@ -24,7 +17,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MonkeAgent — Your Personal AI Assistant",
     description: "Deploy your own AI agent in minutes. No coding required.",
-    images: ["https://agent.monke.is/og-image.png"],
+    images: [],
   },
   icons: {
     icon: "/m-agent-logo-white.svg",
