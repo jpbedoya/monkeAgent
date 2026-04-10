@@ -366,40 +366,162 @@ function Divider() {
    ───────────────────────────────────────── */
 const features = [
   {
-    icon: "⚡",
+    thumb: (
+      <svg viewBox="0 0 120 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="28" fill="#184623" stroke="#4A8F5D" strokeWidth="1"/>
+        <circle cx="60" cy="60" r="18" fill="#4A8F5D"/>
+        <path d="M62 44 L54 62 L61 62 L58 78 L70 58 L63 58 Z" fill="#FFC919"/>
+        <ellipse cx="60" cy="60" rx="44" ry="16" fill="none" stroke="#2E4A31" strokeWidth="0.8" strokeDasharray="3,3"/>
+        <ellipse cx="60" cy="60" rx="16" ry="44" fill="none" stroke="#2E4A31" strokeWidth="0.8" strokeDasharray="3,3"/>
+        <circle cx="104" cy="60" r="3" fill="#86C994"/>
+        <circle cx="16" cy="60" r="3" fill="#86C994"/>
+        <circle cx="60" cy="16" r="3" fill="#FFC919"/>
+        <circle cx="60" cy="104" r="2" fill="#4A8F5D"/>
+      </svg>
+    ),
     title: "No terminal needed",
-    description:
-      "Set up your agent through a simple step-by-step process. No SSH, no CLI, no DevOps experience required.",
+    description: "Set up your agent through a simple step-by-step process. No SSH, no CLI, no DevOps experience required.",
   },
   {
-    icon: "🔒",
+    thumb: (
+      <svg viewBox="0 0 120 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <rect x="22" y="28" width="76" height="15" rx="3" fill="#184623" stroke="#4A8F5D" strokeWidth="0.8"/>
+        <circle cx="33" cy="35.5" r="3.5" fill="#86C994"/>
+        <rect x="40" y="33" width="22" height="5" rx="2" fill="#2E4A31"/>
+        <rect x="66" y="33" width="10" height="5" rx="2" fill="#FFC919"/>
+        <rect x="22" y="50" width="76" height="15" rx="3" fill="#184623" stroke="#4A8F5D" strokeWidth="0.8"/>
+        <circle cx="33" cy="57.5" r="3.5" fill="#86C994"/>
+        <rect x="40" y="55" width="22" height="5" rx="2" fill="#2E4A31"/>
+        <rect x="66" y="55" width="10" height="5" rx="2" fill="#4A8F5D"/>
+        <rect x="22" y="72" width="76" height="15" rx="3" fill="#184623" stroke="#4A8F5D" strokeWidth="0.8"/>
+        <circle cx="33" cy="79.5" r="3.5" fill="#FFC919"/>
+        <rect x="40" y="77" width="22" height="5" rx="2" fill="#2E4A31"/>
+        <rect x="66" y="77" width="10" height="5" rx="2" fill="#86C994"/>
+        <rect x="50" y="92" width="20" height="14" rx="2" fill="#4A8F5D"/>
+        <path d="M54 92 Q60 84 66 92" fill="none" stroke="#4A8F5D" strokeWidth="2.5"/>
+        <circle cx="60" cy="99" r="2" fill="#F3EFCD"/>
+      </svg>
+    ),
     title: "Dedicated server",
-    description:
-      "Your agent runs on its own isolated instance. Your data stays yours — always. No shared runtimes.",
+    description: "Your agent runs on its own isolated instance. Your data stays yours — always. No shared runtimes.",
   },
   {
-    icon: "🎛",
+    thumb: (
+      <svg viewBox="0 0 120 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="60,20 80,31 80,53 60,64 40,53 40,31" fill="#184623" stroke="#4A8F5D" strokeWidth="1"/>
+        <line x1="60" y1="24" x2="60" y2="30" stroke="#86C994" strokeWidth="1.5"/>
+        <line x1="76" y1="34" x2="73" y2="38" stroke="#4A8F5D" strokeWidth="1.2"/>
+        <line x1="76" y1="50" x2="73" y2="46" stroke="#4A8F5D" strokeWidth="1.2"/>
+        <line x1="60" y1="42" x2="52" y2="30" stroke="#FFC919" strokeWidth="2" strokeLinecap="round"/>
+        <circle cx="60" cy="42" r="4" fill="#4A8F5D"/>
+        <circle cx="60" cy="42" r="2" fill="#F3EFCD"/>
+        <line x1="60" y1="64" x2="30" y2="87" stroke="#2E4A31" strokeWidth="0.8"/>
+        <line x1="60" y1="64" x2="60" y2="87" stroke="#2E4A31" strokeWidth="0.8"/>
+        <line x1="60" y1="64" x2="90" y2="87" stroke="#2E4A31" strokeWidth="0.8"/>
+        <circle cx="30" cy="98" r="11" fill="#1C2B1E" stroke="#4A8F5D" strokeWidth="0.8"/>
+        <circle cx="30" cy="98" r="7.5" fill="#29B6F6"/>
+        <g transform="translate(30,98) scale(0.52)"><path d="M5,-6 L-8,2 L-1,1 L1,7 Z" fill="white"/><path d="M-1,1 L1,7 L-8,2 Z" fill="#29B6F6"/></g>
+        <circle cx="60" cy="98" r="11" fill="#1C2B1E" stroke="#86C994" strokeWidth="0.8"/>
+        <g transform="translate(60,98)"><path d="M-6,-3 Q0,-7 6,-3 L7,3 Q0,7 -7,3 Z" fill="#5865F2"/><circle cx="-2.5" cy="0" r="1.5" fill="white"/><circle cx="2.5" cy="0" r="1.5" fill="white"/></g>
+        <circle cx="90" cy="98" r="11" fill="#1C2B1E" stroke="#FFC919" strokeWidth="0.8"/>
+        <g transform="translate(90,98)"><rect x="-5" y="-5" width="4" height="4" rx="1" fill="#E01E5A"/><rect x="1" y="-5" width="4" height="4" rx="1" fill="#36C5F0"/><rect x="-5" y="1" width="4" height="4" rx="1" fill="#2EB67D"/><rect x="1" y="1" width="4" height="4" rx="1" fill="#ECB22E"/></g>
+      </svg>
+    ),
     title: "Full control",
-    description:
-      "Bring your own AI key or use ours. Choose your integrations — Telegram, Discord, Slack — and configure everything your way.",
+    description: "Bring your own AI key or use ours. Choose your integrations — Telegram, Discord, Slack — and configure everything your way.",
   },
   {
-    icon: "🌍",
+    thumb: (
+      <svg viewBox="0 0 120 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="58" r="36" fill="none" stroke="#2E4A31" strokeWidth="0.8"/>
+        <ellipse cx="60" cy="58" rx="36" ry="14" fill="none" stroke="#2E4A31" strokeWidth="0.8"/>
+        <ellipse cx="60" cy="58" rx="20" ry="36" fill="none" stroke="#2E4A31" strokeWidth="0.8"/>
+        <line x1="24" y1="58" x2="96" y2="58" stroke="#2E4A31" strokeWidth="0.8"/>
+        <circle cx="40" cy="46" r="3" fill="#FFC919"/>
+        <circle cx="72" cy="42" r="3" fill="#86C994"/>
+        <circle cx="52" cy="68" r="3" fill="#86C994"/>
+        <circle cx="80" cy="64" r="3" fill="#FFC919"/>
+        <circle cx="32" cy="66" r="2" fill="#4A8F5D"/>
+        <line x1="40" y1="46" x2="72" y2="42" stroke="#4A8F5D" strokeWidth="0.6"/>
+        <line x1="72" y1="42" x2="80" y2="64" stroke="#4A8F5D" strokeWidth="0.6"/>
+        <line x1="40" y1="46" x2="52" y2="68" stroke="#4A8F5D" strokeWidth="0.6"/>
+        <line x1="52" y1="68" x2="80" y2="64" stroke="#4A8F5D" strokeWidth="0.6"/>
+        <rect x="22" y="102" width="76" height="7" rx="3.5" fill="#184623"/>
+        <rect x="22" y="102" width="73" height="7" rx="3.5" fill="#86C994"/>
+      </svg>
+    ),
     title: "Global infrastructure",
-    description:
-      "Powered by Hetzner data centers worldwide. Low latency, high availability, 99.9% uptime SLA.",
+    description: "Powered by Hetzner data centers worldwide. Low latency, high availability, 99.9% uptime SLA.",
   },
   {
-    icon: "🤖",
+    thumb: (
+      <svg viewBox="0 0 120 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="60" x2="96" y2="60" stroke="#2E4A31" strokeWidth="0.8"/>
+        <line x1="60" y1="60" x2="78" y2="91" stroke="#2E4A31" strokeWidth="0.8"/>
+        <line x1="60" y1="60" x2="42" y2="91" stroke="#2E4A31" strokeWidth="0.8"/>
+        <line x1="60" y1="60" x2="24" y2="60" stroke="#2E4A31" strokeWidth="0.8"/>
+        <line x1="60" y1="60" x2="42" y2="29" stroke="#2E4A31" strokeWidth="0.8"/>
+        <line x1="60" y1="60" x2="78" y2="29" stroke="#2E4A31" strokeWidth="0.8"/>
+        <circle cx="96" cy="60" r="10" fill="#1C2B1E" stroke="#4A8F5D" strokeWidth="0.8"/>
+        <g transform="translate(96,60)"><line x1="0" y1="-5" x2="0" y2="5" stroke="#F3EFCD" strokeWidth="1.4" strokeLinecap="round"/><line x1="-4.3" y1="-2.5" x2="4.3" y2="2.5" stroke="#F3EFCD" strokeWidth="1.4" strokeLinecap="round"/><line x1="-4.3" y1="2.5" x2="4.3" y2="-2.5" stroke="#F3EFCD" strokeWidth="1.4" strokeLinecap="round"/></g>
+        <circle cx="78" cy="91" r="10" fill="#1C2B1E" stroke="#4A8F5D" strokeWidth="0.8"/>
+        <g transform="translate(78,91)"><path d="M0,-7 Q1,0 7,0 Q1,0 0,7 Q-1,0 -7,0 Q-1,0 0,-7Z" fill="#4285F4"/></g>
+        <circle cx="42" cy="91" r="10" fill="#1C2B1E" stroke="#FFC919" strokeWidth="0.8"/>
+        <g transform="translate(42,91)"><circle cx="0" cy="0" r="6" fill="#FFC919"/><circle cx="2.5" cy="0" r="4.2" fill="#1C2B1E"/></g>
+        <circle cx="24" cy="60" r="10" fill="#1C2B1E" stroke="#86C994" strokeWidth="0.8"/>
+        <g transform="translate(24,60)"><path d="M-5,3 L-2,-3 L1,2 L4,-3 L7,3" fill="none" stroke="#86C994" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></g>
+        <circle cx="42" cy="29" r="10" fill="#1C2B1E" stroke="#4A8F5D" strokeWidth="0.8"/>
+        <g transform="translate(42,29)"><line x1="-4.5" y1="-4.5" x2="4.5" y2="4.5" stroke="#F3EFCD" strokeWidth="2" strokeLinecap="round"/><line x1="4.5" y1="-4.5" x2="-4.5" y2="4.5" stroke="#F3EFCD" strokeWidth="2" strokeLinecap="round"/></g>
+        <circle cx="78" cy="29" r="10" fill="#1C2B1E" stroke="#86C994" strokeWidth="0.8"/>
+        <g transform="translate(78,29)"><path d="M0,-6 L6,0 L0,6 L-6,0 Z" fill="none" stroke="#CC785C" strokeWidth="1.5" strokeLinejoin="round"/><circle cx="0" cy="0" r="2" fill="#CC785C"/></g>
+        <circle cx="60" cy="60" r="13" fill="#184623" stroke="#4A8F5D" strokeWidth="1.2"/>
+        <rect x="55.5" y="55.5" width="9" height="9" rx="2" fill="#FFC919"/>
+        <line x1="53.5" y1="60" x2="51" y2="60" stroke="#FFC919" strokeWidth="1"/>
+        <line x1="66.5" y1="60" x2="69" y2="60" stroke="#FFC919" strokeWidth="1"/>
+        <line x1="60" y1="53.5" x2="60" y2="51" stroke="#FFC919" strokeWidth="1"/>
+        <line x1="60" y1="66.5" x2="60" y2="69" stroke="#FFC919" strokeWidth="1"/>
+      </svg>
+    ),
     title: "Multi-model support",
-    description:
-      "Choose from ChatGPT, Gemini, MiniMax, and more supported providers. Switch anytime — no lock-in.",
+    description: "Choose from ChatGPT, Gemini, MiniMax, and more supported providers. Switch anytime — no lock-in.",
   },
   {
-    icon: "🐵",
+    thumb: (
+      <svg viewBox="0 0 120 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="34" cy="62" r="12" fill="#184623" stroke="#2E4A31" strokeWidth="0.8"/>
+        <circle cx="34" cy="56" r="7" fill="#184623" stroke="#2E4A31" strokeWidth="0.8"/>
+        <circle cx="28" cy="57" r="4" fill="#184623" stroke="#2E4A31" strokeWidth="0.8"/>
+        <circle cx="40" cy="57" r="4" fill="#184623" stroke="#2E4A31" strokeWidth="0.8"/>
+        <ellipse cx="34" cy="58" rx="4" ry="3" fill="#2E4A31"/>
+        <circle cx="32" cy="56" r="1" fill="#86C994"/>
+        <circle cx="36" cy="56" r="1" fill="#86C994"/>
+        <circle cx="86" cy="62" r="12" fill="#184623" stroke="#2E4A31" strokeWidth="0.8"/>
+        <circle cx="86" cy="56" r="7" fill="#184623" stroke="#2E4A31" strokeWidth="0.8"/>
+        <circle cx="80" cy="57" r="4" fill="#184623" stroke="#2E4A31" strokeWidth="0.8"/>
+        <circle cx="92" cy="57" r="4" fill="#184623" stroke="#2E4A31" strokeWidth="0.8"/>
+        <ellipse cx="86" cy="58" rx="4" ry="3" fill="#2E4A31"/>
+        <circle cx="84" cy="56" r="1" fill="#86C994"/>
+        <circle cx="88" cy="56" r="1" fill="#86C994"/>
+        <circle cx="60" cy="60" r="15" fill="#4A8F5D" stroke="#86C994" strokeWidth="1"/>
+        <circle cx="60" cy="52" r="9" fill="#4A8F5D" stroke="#86C994" strokeWidth="1"/>
+        <circle cx="51" cy="53" r="5" fill="#4A8F5D" stroke="#86C994" strokeWidth="1"/>
+        <circle cx="69" cy="53" r="5" fill="#4A8F5D" stroke="#86C994" strokeWidth="1"/>
+        <ellipse cx="60" cy="55" rx="5" ry="4" fill="#86C994"/>
+        <circle cx="57" cy="53" r="1.5" fill="#184623"/>
+        <circle cx="63" cy="53" r="1.5" fill="#184623"/>
+        <path d="M51 47 L55 40 L60 45 L65 40 L69 47 Z" fill="#FFC919"/>
+        <circle cx="51" cy="47" r="1.5" fill="#FFC919"/>
+        <circle cx="69" cy="47" r="1.5" fill="#FFC919"/>
+        <circle cx="60" cy="45" r="1.5" fill="#FFC919"/>
+        <g opacity="0.8">
+          {[90,96,102].map(y => [20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100].map(x => (
+            <circle key={`${x}-${y}`} cx={x} cy={y} r={y===102?1.5:x<46?1.5:1.5} fill={y===102?"#2E4A31":x<46?"#4A8F5D":"#86C994"}/>
+          )))}
+        </g>
+      </svg>
+    ),
     title: "Community-built",
-    description:
-      "Built by MonkeDAO on OpenClaw. 3,000+ members strong and growing — shaping what personal AI looks like.",
+    description: "Built by MonkeDAO on OpenClaw. 3,000+ members strong and growing — shaping what personal AI looks like.",
   },
 ];
 
@@ -458,12 +580,12 @@ function Features() {
             className="flex flex-col p-6 md:p-8 transition-colors hover:bg-[#181E19]"
             style={{ background: "var(--surface)" }}
           >
-            {/* Icon box — fixed size, top-aligned */}
+            {/* SVG Thumbnail */}
             <div
-              className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl text-lg"
-              style={{ background: "var(--g-dark)", border: "0.5px solid var(--g)", flexShrink: 0 }}
+              className="mb-5 w-full overflow-hidden rounded-xl"
+              style={{ background: "#0F1F11", border: "0.5px solid rgba(74,143,93,0.3)", aspectRatio: "1", flexShrink: 0 }}
             >
-              {f.icon}
+              {f.thumb}
             </div>
             {/* Title */}
             <h3
