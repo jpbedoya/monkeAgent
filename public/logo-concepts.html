@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonkeAgent Logo Concepts</title>
+    <style>
+        body {
+            background: #0A0E0B;
+            color: #E8F0E9;
+            font-family: 'Inter', sans-serif;
+            padding: 40px;
+            margin: 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .concept {
+            background: #111714;
+            border: 1px solid rgba(74,143,93,0.18);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+        .concept h3 {
+            margin-top: 20px;
+            color: #86C994;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .logo-container {
+            background: #0A0E0B;
+            border-radius: 12px;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 120px;
+        }
+        .sizes {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74,143,93,0.1);
+        }
+        .size-demo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        .size-label {
+            font-size: 10px;
+            color: rgba(134,201,148,0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-bottom: 40px;">MonkeAgent Logo Concepts</h1>
+    
+    <div class="grid">
+        <!-- Concept 1: Abstract Monke Mark -->
+        <div class="concept">
+            <div class="logo-container">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Monkey face from geometric shapes -->
+                    <circle cx="40" cy="40" r="28" fill="#184623"/>
+                    <circle cx="40" cy="40" r="25" fill="#4A8F5D"/>
+                    <!-- Ears -->
+                    <circle cx="22" cy="38" r="10" fill="#4A8F5D"/>
+                    <circle cx="58" cy="38" r="10" fill="#4A8F5D"/>
+                    <circle cx="22" cy="38" r="7" fill="#184623"/>
+                    <circle cx="58" cy="38" r="7" fill="#184623"/>
+                    <!-- Face details -->
+                    <ellipse cx="40" cy="46" rx="18" ry="16" fill="#86C994"/>
+                    <!-- Eyes -->
+                    <circle cx="32" cy="36" r="3" fill="#0A0E0B"/>
+                    <circle cx="48" cy="36" r="3" fill="#0A0E0B"/>
+                    <!-- Nose/mouth area -->
+                    <path d="M35 48 Q40 52 45 48" stroke="#184623" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <circle cx="40" cy="46" r="2" fill="#184623"/>
+                </svg>
+            </div>
+            <h3>Abstract Monke Mark</h3>
+            <div class="sizes">
+                <div class="size-demo">
+                    <svg width="32" height="32" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="25" fill="#4A8F5D"/>
+                        <circle cx="22" cy="38" r="10" fill="#4A8F5D"/>
+                        <circle cx="58" cy="38" r="10" fill="#4A8F5D"/>
+                        <circle cx="22" cy="38" r="7" fill="#184623"/>
+                        <circle cx="58" cy="38" r="7" fill="#184623"/>
+                        <ellipse cx="40" cy="46" rx="18" ry="16" fill="#86C994"/>
+                        <circle cx="32" cy="36" r="3" fill="#0A0E0B"/>
+                        <circle cx="48" cy="36" r="3" fill="#0A0E0B"/>
+                        <path d="M35 48 Q40 52 45 48" stroke="#184623" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <span class="size-label">32px</span>
+                </div>
+                <div class="size-demo">
+                    <svg width="16" height="16" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="25" fill="#4A8F5D"/>
+                        <ellipse cx="40" cy="46" rx="18" ry="16" fill="#86C994"/>
+                    </svg>
+                    <span class="size-label">16px</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concept 2: Circuit Brain Monke -->
+        <div class="concept">
+            <div class="logo-container">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Monkey silhouette -->
+                    <path d="M40 10 C55 10 65 20 65 35 C65 55 55 70 40 70 C25 70 15 55 15 35 C15 20 25 10 40 10" fill="#184623"/>
+                    <!-- Ears -->
+                    <circle cx="25" cy="35" r="8" fill="#184623"/>
+                    <circle cx="55" cy="35" r="8" fill="#184623"/>
+                    <!-- Circuit pattern overlay -->
+                    <g stroke="#4A8F5D" stroke-width="1" fill="none">
+                        <path d="M30 30 L35 30 L35 35 L45 35 L45 30 L50 30"/>
+                        <path d="M40 25 L40 30 M40 35 L40 40 M40 45 L40 50"/>
+                        <path d="M25 40 L30 40 L30 45 L50 45 L50 40 L55 40"/>
+                        <circle cx="30" cy="30" r="2" fill="#86C994" stroke="none"/>
+                        <circle cx="50" cy="30" r="2" fill="#86C994" stroke="none"/>
+                        <circle cx="40" cy="35" r="3" fill="#86C994" stroke="none"/>
+                        <circle cx="30" cy="45" r="2" fill="#86C994" stroke="none"/>
+                        <circle cx="50" cy="45" r="2" fill="#86C994" stroke="none"/>
+                    </g>
+                    <!-- Glowing eyes -->
+                    <circle cx="33" cy="35" r="3" fill="#86C994">
+                        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="47" cy="35" r="3" fill="#86C994">
+                        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+            <h3>Circuit Brain Monke</h3>
+            <div class="sizes">
+                <div class="size-demo">
+                    <svg width="32" height="32" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 10 C55 10 65 20 65 35 C65 55 55 70 40 70 C25 70 15 55 15 35 C15 20 25 10 40 10" fill="#184623"/>
+                        <circle cx="25" cy="35" r="8" fill="#184623"/>
+                        <circle cx="55" cy="35" r="8" fill="#184623"/>
+                        <g stroke="#4A8F5D" stroke-width="2" fill="none">
+                            <path d="M30 30 L50 30 M40 25 L40 50 M25 40 L55 40"/>
+                            <circle cx="40" cy="35" r="3" fill="#86C994" stroke="none"/>
+                        </g>
+                    </svg>
+                    <span class="size-label">32px</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concept 3: Terminal Prompt Style -->
+        <div class="concept">
+            <div class="logo-container">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Terminal prompt -->
+                    <text x="15" y="45" font-family="monospace" font-size="28" fill="#4A8F5D" font-weight="bold">&gt;_</text>
+                    <!-- Monkey tail curve -->
+                    <path d="M45 40 Q55 35 58 45 Q60 55 55 58 Q50 60 48 55" 
+                          stroke="#86C994" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <!-- Cursor blink -->
+                    <rect x="45" y="32" width="3" height="18" fill="#86C994">
+                        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                    </rect>
+                </svg>
+            </div>
+            <h3>Terminal Prompt Style</h3>
+            <div class="sizes">
+                <div class="size-demo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="4" y="20" font-family="monospace" font-size="14" fill="#4A8F5D" font-weight="bold">&gt;_</text>
+                        <path d="M20 18 Q26 16 28 22" stroke="#86C994" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <span class="size-label">32px</span>
+                </div>
+                <div class="size-demo">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="1" y="11" font-family="monospace" font-size="10" fill="#4A8F5D" font-weight="bold">&gt;</text>
+                    </svg>
+                    <span class="size-label">16px</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concept 4: M + Agent Symbol -->
+        <div class="concept">
+            <div class="logo-container">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Stylized M that forms monkey face -->
+                    <path d="M15 60 L15 30 Q15 20 25 20 Q30 20 35 25 L40 30 L45 25 Q50 20 55 20 Q65 20 65 30 L65 60" 
+                          stroke="#4A8F5D" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Hidden monkey face in negative space -->
+                    <circle cx="28" cy="35" r="3" fill="#86C994"/>
+                    <circle cx="52" cy="35" r="3" fill="#86C994"/>
+                    <!-- Neural network node as dot on i -->
+                    <circle cx="70" cy="25" r="4" fill="#86C994"/>
+                    <circle cx="70" cy="25" r="2" fill="#184623"/>
+                    <!-- Connection lines -->
+                    <path d="M66 25 L62 25 M74 25 L78 25 M70 21 L70 17 M70 29 L70 33" 
+                          stroke="#4A8F5D" stroke-width="1" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h3>M + Agent Symbol</h3>
+            <div class="sizes">
+                <div class="size-demo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 24 L6 12 Q6 8 10 8 Q12 8 14 10 L16 12 L18 10 Q20 8 22 8 Q26 8 26 12 L26 24" 
+                              stroke="#4A8F5D" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <circle cx="11" cy="14" r="1.5" fill="#86C994"/>
+                        <circle cx="21" cy="14" r="1.5" fill="#86C994"/>
+                    </svg>
+                    <span class="size-label">32px</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concept 5: Hexagon Badge -->
+        <div class="concept">
+            <div class="logo-container">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Hexagon -->
+                    <path d="M40 10 L60 22 L60 48 L40 60 L20 48 L20 22 Z" 
+                          fill="#184623" stroke="#4A8F5D" stroke-width="2"/>
+                    <!-- Monkey silhouette inside -->
+                    <ellipse cx="40" cy="38" r="15" ry="18" fill="#4A8F5D"/>
+                    <circle cx="30" cy="35" r="6" fill="#4A8F5D"/>
+                    <circle cx="50" cy="35" r="6" fill="#4A8F5D"/>
+                    <!-- Eyes with glow -->
+                    <circle cx="35" cy="35" r="2" fill="#86C994">
+                        <animate attributeName="r" values="2;3;2" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="45" cy="35" r="2" fill="#86C994">
+                        <animate attributeName="r" values="2;3;2" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <!-- Data flow on edges -->
+                    <circle cx="20" cy="22" r="1" fill="#86C994">
+                        <animate attributeName="cy" values="22;48;22" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="60" cy="48" r="1" fill="#86C994">
+                        <animate attributeName="cy" values="48;22;48" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+            <h3>Hexagon Badge</h3>
+            <div class="sizes">
+                <div class="size-demo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 4 L24 9 L24 19 L16 24 L8 19 L8 9 Z" 
+                              fill="#184623" stroke="#4A8F5D" stroke-width="1"/>
+                        <ellipse cx="16" cy="15" r="6" ry="7" fill="#4A8F5D"/>
+                        <circle cx="13" cy="14" r="1" fill="#86C994"/>
+                        <circle cx="19" cy="14" r="1" fill="#86C994"/>
+                    </svg>
+                    <span class="size-label">32px</span>
+                </div>
+                <div class="size-demo">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 2 L12 4.5 L12 9.5 L8 12 L4 9.5 L4 4.5 Z" 
+                              fill="#4A8F5D"/>
+                    </svg>
+                    <span class="size-label">16px</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="margin-top: 60px; padding: 30px; background: #111714; border: 1px solid rgba(74,143,93,0.18); border-radius: 16px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+        <h2 style="color: #86C994; margin-bottom: 20px;">Usage Examples</h2>
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+            <div>
+                <h4 style="color: rgba(134,201,148,0.7); font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">With Wordmark</h4>
+                <div style="display: flex; align-items: center; gap: 12px; background: #0A0E0B; padding: 16px 24px; border-radius: 8px;">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="4" y="20" font-family="monospace" font-size="14" fill="#4A8F5D" font-weight="bold">&gt;_</text>
+                        <path d="M20 18 Q26 16 28 22" stroke="#86C994" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <span style="font-weight: 700; font-size: 18px;">MonkeAgent</span>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: rgba(134,201,148,0.7); font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Favicon</h4>
+                <div style="display: flex; gap: 16px;">
+                    <div style="background: white; padding: 8px; border-radius: 4px;">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 2 L12 4.5 L12 9.5 L8 12 L4 9.5 L4 4.5 Z" fill="#4A8F5D"/>
+                        </svg>
+                    </div>
+                    <div style="background: #0A0E0B; padding: 8px; border-radius: 4px; border: 1px solid #333;">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 2 L12 4.5 L12 9.5 L8 12 L4 9.5 L4 4.5 Z" fill="#4A8F5D"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
