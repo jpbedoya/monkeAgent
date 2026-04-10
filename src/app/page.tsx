@@ -18,7 +18,7 @@ function Navbar() {
             className="flex h-8 w-8 items-center justify-center rounded-lg border"
             style={{ background: "var(--g-dark)", border: "1px solid var(--g)", padding: 4 }}
           >
-            <img src="/monke-logo.svg" alt="MonkeDAO" style={{ width: "100%", height: "100%", filter: "invert(1)" }} />
+            <img src="/m-agent-logo.svg" alt="MonkeAgent" style={{ width: "100%", height: "100%",  }} />
           </div>
           MonkeAgent
         </Link>
@@ -182,7 +182,7 @@ function Hero() {
                 display: "flex", alignItems: "center", justifyContent: "center",
                 fontSize: 14, flexShrink: 0,
               }}
-            ><img src="/monke-logo.svg" alt="MonkeDAO" style={{ width: 20, height: 20, filter: "invert(1)" }} /></div>
+            ><img src="/m-agent-logo.svg" alt="MonkeAgent" style={{ width: 20, height: 20,  }} /></div>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: "#E8F2EA", letterSpacing: "-0.01em" }}>My Operator</div>
               <div style={{ fontSize: 9, color: "var(--g-light)", fontFamily: "var(--font-jetbrains), monospace" }}>online</div>
@@ -868,7 +868,7 @@ function Footer() {
               className="flex h-8 w-8 items-center justify-center rounded-lg border"
               style={{ background: "var(--g-dark)", border: "1px solid var(--g)", padding: 4 }}
             >
-              <img src="/monke-logo.svg" alt="MonkeDAO" style={{ width: "100%", height: "100%", filter: "invert(1)" }} />
+              <img src="/m-agent-logo.svg" alt="MonkeAgent" style={{ width: "100%", height: "100%",  }} />
             </div>
             MonkeAgent
           </div>
