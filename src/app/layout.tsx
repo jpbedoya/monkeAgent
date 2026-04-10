@@ -4,6 +4,32 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "MonkeAgent — Your AI Agent, Deployed in Minutes",
   description: "No terminal. No server setup. No DevOps. Your own AI running 24/7 on dedicated infrastructure — built by MonkeDAO on OpenClaw.",
+  openGraph: {
+    title: "MonkeAgent — Your Personal AI Assistant",
+    description: "Deploy your own AI agent in minutes. No coding required.",
+    url: "https://agent.monke.is",
+    siteName: "MonkeAgent",
+    images: [
+      {
+        url: "https://agent.monke.is/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MonkeAgent - AI Assistant Platform",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MonkeAgent — Your Personal AI Assistant",
+    description: "Deploy your own AI agent in minutes. No coding required.",
+    images: ["https://agent.monke.is/og-image.png"],
+  },
+  icons: {
+    icon: "/m-agent-logo.svg",
+    apple: "/m-agent-logo.svg",
+  },
 };
 
 export default function RootLayout({
