@@ -440,7 +440,7 @@ function Features() {
 
       {/* Grid — equal-height cards via flex + stretch */}
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 overflow-hidden rounded-2xl"
+        className="features-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 overflow-hidden rounded-2xl"
         style={{
           gap: 1,
           background: "rgba(74,143,93,0.18)",
