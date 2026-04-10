@@ -139,136 +139,135 @@ function Hero() {
       <div className="flex justify-center">
         {/* Phone frame */}
         <div
-          className="w-[195px] md:w-[220px]"
+          className="w-[260px] md:w-[300px]"
           style={{
             background: "#0F1510",
             border: "1.5px solid rgba(74,143,93,0.3)",
-            borderRadius: 28,
+            borderRadius: 32,
             overflow: "hidden",
             maxWidth: "100%",
-
           }}
         >
           {/* Notch */}
           <div
             style={{
-              height: 28,
+              height: 24,
               background: "#0A0E0B",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
-            <div style={{ width: 60, height: 4, background: "#1E2620", borderRadius: 4 }} />
+            <div style={{ width: 56, height: 4, background: "#1E2620", borderRadius: 4 }} />
           </div>
 
           {/* TG Header */}
           <div
             style={{
               background: "#17211A",
-              padding: "10px 12px",
+              padding: "10px 14px",
               display: "flex",
               alignItems: "center",
-              gap: 8,
+              gap: 10,
               borderBottom: "0.5px solid rgba(74,143,93,0.15)",
             }}
           >
             <div
               style={{
-                width: 32, height: 32,
+                width: 36, height: 36,
                 borderRadius: "50%",
                 background: "var(--g-dark)",
                 border: "1px solid var(--g)",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 14, flexShrink: 0,
+                flexShrink: 0,
               }}
-            ><img src="/m-agent-logo-white.svg" alt="MonkeAgent" style={{ width: 20, height: 20,  }} /></div>
+            ><img src="/m-agent-logo-white.svg" alt="MonkeAgent" style={{ width: 22, height: 22 }} /></div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: "#E8F2EA", letterSpacing: "-0.01em" }}>My Operator</div>
-              <div style={{ fontSize: 9, color: "var(--g-light)", fontFamily: "var(--font-jetbrains), monospace" }}>online</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#E8F2EA", letterSpacing: "-0.01em" }}>My Operator</div>
+              <div style={{ fontSize: 10, color: "var(--g-light)" }}>online</div>
             </div>
-            <div style={{ width: 5, height: 5, background: "var(--g-light)", borderRadius: "50%", animation: "pulse 2s infinite" }} />
+            <div style={{ width: 6, height: 6, background: "var(--g-light)", borderRadius: "50%", animation: "pulse 2s infinite" }} />
           </div>
 
           {/* Chat body */}
           <div
             style={{
-              padding: "10px 10px 12px",
+              padding: "12px 12px 14px",
               display: "flex",
               flexDirection: "column",
-              gap: 8,
+              gap: 10,
               background: "#0F1510",
-              height: 280,
+              height: 340,
               overflowY: "auto",
               overflowX: "hidden",
               position: "relative",
             }}
           >
             {/* Date divider */}
-            <div style={{ textAlign: "center", fontSize: 9, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", margin: "4px 0" }}>
+            <div style={{ textAlign: "center", fontSize: 10, color: "rgba(134,201,148,0.35)", margin: "2px 0" }}>
               Today, 8:00 AM
             </div>
 
             {/* Agent morning brief */}
             <div style={{ display: "flex", flexDirection: "column", maxWidth: "88%", alignSelf: "flex-start" }}>
-              <div style={{ background: "#1E2E21", border: "0.5px solid rgba(74,143,93,0.2)", borderRadius: "14px 14px 14px 4px", padding: "8px 11px", fontSize: 11, lineHeight: 1.55, color: "#C8E8CC" }}>
+              <div style={{ background: "#1E2E21", border: "0.5px solid rgba(74,143,93,0.2)", borderRadius: "14px 14px 14px 4px", padding: "9px 13px", fontSize: 12, lineHeight: 1.55, color: "#C8E8CC" }}>
                 Good morning. Here&apos;s what&apos;s on your plate today.
               </div>
               {/* Brief card */}
-              <div style={{ background: "#17211A", border: "0.5px solid rgba(74,143,93,0.25)", borderRadius: 10, overflow: "hidden", marginTop: 2 }}>
-                <div style={{ background: "#1A2C1D", padding: "5px 9px", fontSize: 9, fontWeight: 700, color: "var(--g-light)", fontFamily: "var(--font-jetbrains), monospace", letterSpacing: "0.05em", display: "flex", alignItems: "center", gap: 5 }}>
+              <div style={{ background: "#17211A", border: "0.5px solid rgba(74,143,93,0.25)", borderRadius: 10, overflow: "hidden", marginTop: 3 }}>
+                <div style={{ background: "#1A2C1D", padding: "6px 11px", fontSize: 10, fontWeight: 700, color: "var(--g-light)", letterSpacing: "0.05em", display: "flex", alignItems: "center", gap: 6 }}>
                   <div style={{ width: 5, height: 5, background: "var(--g-light)", borderRadius: "50%" }} />
                   Morning brief — Apr 10
                 </div>
-                <div style={{ padding: "7px 9px", display: "flex", flexDirection: "column", gap: 4 }}>
+                <div style={{ padding: "8px 11px", display: "flex", flexDirection: "column", gap: 5 }}>
                   {[
                     { icon: "★", text: "4 unread emails flagged" },
                     { icon: "↑", text: "2pm meeting has new agenda" },
                     { icon: "!", text: "1 overdue task from yesterday" },
                     { icon: "◎", text: "Rest of the day is clear" },
                   ].map((row) => (
-                    <div key={row.text} style={{ fontSize: 10, color: "rgba(200,232,204,0.8)", display: "flex", gap: 6, alignItems: "flex-start", lineHeight: 1.4 }}>
+                    <div key={row.text} style={{ fontSize: 11, color: "rgba(200,232,204,0.85)", display: "flex", gap: 7, alignItems: "flex-start", lineHeight: 1.4 }}>
                       <span style={{ color: "var(--y)", flexShrink: 0 }}>{row.icon}</span>
                       {row.text}
                     </div>
                   ))}
                 </div>
               </div>
-              <div style={{ fontSize: 8, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", marginTop: 3, padding: "0 3px" }}>8:00 AM</div>
+              <div style={{ fontSize: 9, color: "rgba(134,201,148,0.3)", marginTop: 3, padding: "0 3px" }}>8:00 AM</div>
             </div>
 
             {/* User message */}
             <div style={{ display: "flex", flexDirection: "column", maxWidth: "88%", alignSelf: "flex-end" }}>
-              <div style={{ background: "#184623", borderRadius: "14px 14px 4px 14px", padding: "8px 11px", fontSize: 11, lineHeight: 1.55, color: "#D4F0D8" }}>
+              <div style={{ background: "#184623", borderRadius: "14px 14px 4px 14px", padding: "9px 13px", fontSize: 12, lineHeight: 1.55, color: "#D4F0D8" }}>
                 Summarize those emails and draft replies
               </div>
-              <div style={{ fontSize: 8, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", marginTop: 3, padding: "0 3px", textAlign: "right" }}>8:03 AM ✓✓</div>
+              <div style={{ fontSize: 9, color: "rgba(134,201,148,0.3)", marginTop: 3, padding: "0 3px", textAlign: "right" }}>8:03 AM ✓✓</div>
             </div>
 
             {/* Agent reply */}
             <div style={{ display: "flex", flexDirection: "column", maxWidth: "88%", alignSelf: "flex-start" }}>
-              <div style={{ background: "#1E2E21", border: "0.5px solid rgba(74,143,93,0.2)", borderRadius: "14px 14px 14px 4px", padding: "8px 11px", fontSize: 11, lineHeight: 1.55, color: "#C8E8CC" }}>
+              <div style={{ background: "#1E2E21", border: "0.5px solid rgba(74,143,93,0.2)", borderRadius: "14px 14px 14px 4px", padding: "9px 13px", fontSize: 12, lineHeight: 1.55, color: "#C8E8CC" }}>
                 Done. 4 summaries ready, 3 draft replies written. Send or save as drafts?
               </div>
-              <div style={{ fontSize: 8, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", marginTop: 3, padding: "0 3px" }}>8:03 AM</div>
+              <div style={{ fontSize: 9, color: "rgba(134,201,148,0.3)", marginTop: 3, padding: "0 3px" }}>8:03 AM</div>
             </div>
 
             {/* User: save drafts */}
             <div style={{ display: "flex", flexDirection: "column", maxWidth: "88%", alignSelf: "flex-end" }}>
-              <div style={{ background: "#184623", borderRadius: "14px 14px 4px 14px", padding: "8px 11px", fontSize: 11, lineHeight: 1.55, color: "#D4F0D8" }}>
+              <div style={{ background: "#184623", borderRadius: "14px 14px 4px 14px", padding: "9px 13px", fontSize: 12, lineHeight: 1.55, color: "#D4F0D8" }}>
                 Save as drafts
               </div>
-              <div style={{ fontSize: 8, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", marginTop: 3, padding: "0 3px", textAlign: "right" }}>8:04 AM ✓✓</div>
+              <div style={{ fontSize: 9, color: "rgba(134,201,148,0.3)", marginTop: 3, padding: "0 3px", textAlign: "right" }}>8:04 AM ✓✓</div>
             </div>
 
             {/* Agent confirmation */}
             <div style={{ display: "flex", flexDirection: "column", maxWidth: "88%", alignSelf: "flex-start" }}>
-              <div style={{ background: "#1E2E21", border: "0.5px solid rgba(74,143,93,0.2)", borderRadius: "14px 14px 14px 4px", padding: "8px 11px", fontSize: 10, lineHeight: 1.7, color: "var(--g-light)", fontFamily: "var(--font-jetbrains), monospace" }}>
+              <div style={{ background: "#1E2E21", border: "0.5px solid rgba(74,143,93,0.2)", borderRadius: "14px 14px 14px 4px", padding: "9px 13px", fontSize: 11, lineHeight: 1.7, color: "var(--g-light)" }}>
                 ✓ 3 drafts saved to inbox<br />
                 ✓ Overdue task rescheduled<br />
                 ✓ Memory updated
               </div>
-              <div style={{ fontSize: 8, color: "rgba(134,201,148,0.3)", fontFamily: "var(--font-jetbrains), monospace", marginTop: 3, padding: "0 3px" }}>8:04 AM</div>
+              <div style={{ fontSize: 9, color: "rgba(134,201,148,0.3)", marginTop: 3, padding: "0 3px" }}>8:04 AM</div>
             </div>
           </div>
 
@@ -276,18 +275,18 @@ function Hero() {
           <div
             style={{
               background: "#17211A",
-              padding: "8px 10px",
+              padding: "10px 12px",
               display: "flex",
               alignItems: "center",
-              gap: 7,
+              gap: 8,
               borderTop: "0.5px solid rgba(74,143,93,0.15)",
             }}
           >
-            <div style={{ flex: 1, background: "#1E2620", borderRadius: 16, height: 26, display: "flex", alignItems: "center", padding: "0 10px" }}>
-              <span style={{ fontSize: 9, color: "rgba(134,201,148,0.25)", fontFamily: "var(--font-jetbrains), monospace" }}>Message operator...</span>
+            <div style={{ flex: 1, background: "#1E2620", borderRadius: 18, height: 32, display: "flex", alignItems: "center", padding: "0 12px" }}>
+              <span style={{ fontSize: 11, color: "rgba(134,201,148,0.25)" }}>Message operator...</span>
             </div>
-            <div style={{ width: 24, height: 24, background: "var(--g)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-              <svg viewBox="0 0 10 10" fill="none" style={{ width: 10, height: 10 }}>
+            <div style={{ width: 28, height: 28, background: "var(--g)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <svg viewBox="0 0 10 10" fill="none" style={{ width: 11, height: 11 }}>
                 <path d="M1 9L9 5L1 1V4.5L6.5 5L1 5.5V9Z" fill="white" />
               </svg>
             </div>
