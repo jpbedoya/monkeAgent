@@ -580,10 +580,10 @@ function Features() {
             className="flex flex-col p-6 md:p-8 transition-colors hover:bg-[#181E19]"
             style={{ background: "var(--surface)" }}
           >
-            {/* SVG Thumbnail */}
+            {/* Icon box — fixed 48px, SVG inside */}
             <div
-              className="mb-5 w-full overflow-hidden rounded-xl"
-              style={{ background: "#0F1F11", border: "0.5px solid rgba(74,143,93,0.3)", aspectRatio: "1", flexShrink: 0 }}
+              className="mb-5 flex items-center justify-center overflow-hidden rounded-xl"
+              style={{ width: 48, height: 48, background: "var(--g-dark)", border: "0.5px solid var(--g)", flexShrink: 0 }}
             >
               {f.thumb}
             </div>
